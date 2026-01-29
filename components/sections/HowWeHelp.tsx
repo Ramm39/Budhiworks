@@ -1,0 +1,189 @@
+"use client";
+
+import { motion } from "framer-motion";
+
+const helpItems = [
+  {
+    title: "Build from scratch",
+    value: "100%",
+    label: "Custom",
+    icon: "✨",
+  },
+  {
+    title: "Improve existing systems",
+    value: "10x",
+    label: "Performance",
+    icon: "⚡",
+  },
+  {
+    title: "Automate operations",
+    value: "80%",
+    label: "Efficiency",
+    icon: "🤖",
+  },
+  {
+    title: "Scale with confidence",
+    value: "∞",
+    label: "Scalability",
+    icon: "📊",
+  },
+];
+
+export function HowWeHelp() {
+  return (
+    <section className="py-16 sm:py-20 md:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 relative">
+      <div className="max-w-7xl mx-auto">
+        <div className="relative z-10">
+          {/* Title Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+            className="mb-12 sm:mb-16 md:mb-20 text-center"
+          >
+            {/* Large animated title */}
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-white leading-tight mb-4 sm:mb-6 relative px-2">
+              <motion.span
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                className="block mb-2"
+              >
+                HOW WE HELP
+              </motion.span>
+              <motion.span
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                className="block bg-gradient-to-r from-[#4F7DF3] via-[#22D3EE] to-[#4F7DF3] bg-clip-text text-transparent"
+              >
+                BUSINESSES MOVE
+              </motion.span>
+              <motion.span
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                className="block text-[#22D3EE]"
+              >
+                FORWARD
+              </motion.span>
+              {/* Animated glow */}
+              <motion.span 
+                className="absolute inset-0 bg-gradient-to-r from-[#4F7DF3]/40 via-[#22D3EE]/40 to-[#4F7DF3]/40 blur-3xl opacity-40 -z-0"
+                animate={{ opacity: [0.3, 0.4, 0.3] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              />
+            </h2>
+            
+            {/* Animated separator */}
+            <motion.div
+              initial={{ width: 0, opacity: 0 }}
+              whileInView={{ width: "100%", opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.2, delay: 0.5 }}
+              className="h-px bg-gradient-to-r from-transparent via-[#4F7DF3]/40 via-[#22D3EE]/40 to-transparent max-w-2xl mx-auto"
+            />
+          </motion.div>
+
+          {/* Stats Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
+            {helpItems.map((item, index) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, scale: 0.8, y: 60 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ 
+                  duration: 0.8, 
+                  delay: index * 0.15,
+                  ease: [0.22, 1, 0.36, 1]
+                }}
+                whileHover={{ y: -12, scale: 1.05, transition: { duration: 0.3 } }}
+                className="group relative h-full flex"
+              >
+                {/* Floating card */}
+                <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 hover:border-[#22D3EE]/40 hover:bg-white/8 transition-all duration-500 relative overflow-hidden w-full h-full flex flex-col">
+                  {/* Animated icon */}
+                  <motion.div 
+                    className="text-3xl sm:text-4xl mb-4 sm:mb-6 opacity-80 group-hover:opacity-100"
+                    animate={{ 
+                      rotate: [0, 5, -5, 0],
+                      scale: [1, 1.1, 1]
+                    }}
+                    transition={{ 
+                      duration: 3, 
+                      repeat: Infinity,
+                      delay: index * 0.3
+                    }}
+                    whileHover={{ scale: 1.2, rotate: 0 }}
+                  >
+                    {item.icon}
+                  </motion.div>
+                  
+                  {/* Animated metric */}
+                  <div className="mb-4 sm:mb-6">
+                    <motion.div 
+                      className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#22D3EE] mb-1 sm:mb-2"
+                      initial={{ opacity: 0, scale: 0.5 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ 
+                        delay: index * 0.2 + 0.4,
+                        type: "spring",
+                        stiffness: 200
+                      }}
+                      whileHover={{ scale: 1.1 }}
+                    >
+                      {item.value}
+                    </motion.div>
+                    <div className="text-[10px] sm:text-xs text-[#4F7DF3]/80 uppercase tracking-wider font-medium">
+                      {item.label}
+                    </div>
+                  </div>
+                  
+                  {/* Animated progress bar */}
+                  <div className="h-1.5 sm:h-2 bg-white/5 rounded-full mb-4 sm:mb-6 overflow-hidden">
+                    <motion.div
+                      initial={{ width: 0 }}
+                      whileInView={{ width: "100%" }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 1.5, delay: index * 0.2 + 0.6, ease: "easeOut" }}
+                      className="h-full bg-gradient-to-r from-[#4F7DF3] to-[#22D3EE] rounded-full relative"
+                    >
+                      {/* Shimmer effect */}
+                      <motion.div
+                        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
+                        animate={{ x: ["-100%", "100%"] }}
+                        transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}
+                      />
+                    </motion.div>
+                  </div>
+                  
+                  {/* Title */}
+                  <motion.h3 
+                    className="text-sm sm:text-base md:text-lg font-medium text-white group-hover:text-[#22D3EE] transition-colors duration-300 mt-auto"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.2 + 0.8 }}
+                  >
+                    {item.title}
+                  </motion.h3>
+                  
+                  {/* Hover glow */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-br from-[#22D3EE]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"
+                  />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
