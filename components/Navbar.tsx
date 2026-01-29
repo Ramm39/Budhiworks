@@ -130,9 +130,11 @@ function NavbarComponent() {
           ease: [0.4, 0, 0.2, 1]
         }}
       >
-        {/* Solid glassmorphic background - high opacity so it doesn't mix with page */}
+        {/* Solid background - high opacity so it doesn't mix with page content */}
         <motion.div
-          className="absolute inset-0 w-full"
+          className={`absolute inset-0 w-full backdrop-blur-md ${
+            theme === "dark" ? "bg-[rgba(11,15,25,0.96)]" : "bg-[rgba(255,255,255,0.96)]"
+          }`}
           style={{
             backgroundColor: theme === "dark"
               ? `rgba(11, 15, 25, ${navbarOpacity})`
@@ -280,35 +282,14 @@ function NavbarComponent() {
                         {item}
                       </motion.span>
 
-                      {/* Animated underline */}
-                      <motion.div
-                        className="absolute -bottom-1 left-0 right-0 h-px origin-center"
+                      {/* Animated underline - horizontal line only */}
+                      <span
+                        className={`absolute bottom-0 left-0 right-0 block h-0.5 rounded-full origin-center transition-all duration-300 ${
+                          active ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"
+                        } group-hover:opacity-100 group-hover:scale-x-100`}
                         style={{
-                          background: `linear-gradient(90deg, 
-                            transparent, 
-                            ${theme === "dark" ? "rgba(79, 125, 243, 0.8)" : "rgba(79, 125, 243, 0.6)"}, 
-                            transparent)`,
+                          background: theme === "dark" ? "rgba(79, 125, 243, 0.9)" : "rgba(79, 125, 243, 0.7)",
                         }}
-                        initial={{ scaleX: active ? 1 : 0, opacity: active ? 1 : 0 }}
-                        whileHover={{ scaleX: 1, opacity: 1 }}
-                        transition={{
-                          duration: 0.4,
-                          ease: [0.4, 0, 0.2, 1]
-                        }}
-                      />
-
-                      {/* Glow effect on hover */}
-                      <motion.div
-                        className="absolute -inset-2 rounded-lg -z-10"
-                        style={{
-                          background: `radial-gradient(circle, 
-                            ${theme === "dark" ? "rgba(79, 125, 243, 0.15)" : "rgba(79, 125, 243, 0.1)"}, 
-                            transparent 70%)`,
-                          filter: "blur(8px)",
-                        }}
-                        initial={{ opacity: 0 }}
-                        whileHover={{ opacity: 1 }}
-                        transition={{ duration: 0.3 }}
                       />
                     </Component>
                   </motion.div>
@@ -334,51 +315,21 @@ function NavbarComponent() {
                     className="relative overflow-hidden rounded-full outline-none focus-within:outline-none"
                     style={{
                       background: theme === "dark"
-                        ? "linear-gradient(135deg, rgba(79, 125, 243, 0.25) 0%, rgba(34, 211, 238, 0.2) 100%)"
-                        : "linear-gradient(135deg, rgba(79, 125, 243, 0.2) 0%, rgba(34, 211, 238, 0.15) 100%)",
+                        ? "linear-gradient(135deg, rgba(79, 125, 243, 0.28) 0%, rgba(34, 211, 238, 0.22) 100%)"
+                        : "linear-gradient(135deg, rgba(79, 125, 243, 0.22) 0%, rgba(34, 211, 238, 0.18) 100%)",
                       backdropFilter: "blur(10px)",
                       WebkitBackdropFilter: "blur(10px)",
-                      border: `1px solid ${theme === "dark" ? "rgba(79, 125, 243, 0.4)" : "rgba(79, 125, 243, 0.3)"}`,
+                      border: `1px solid ${theme === "dark" ? "rgba(79, 125, 243, 0.45)" : "rgba(79, 125, 243, 0.35)"}`,
+                      boxShadow: "none",
                     }}
-                    animate={{
-                      boxShadow: theme === "dark"
-                        ? "0 4px 20px rgba(79, 125, 243, 0.2), 0 0 30px rgba(79, 125, 243, 0.1)"
-                        : "0 4px 20px rgba(79, 125, 243, 0.15), 0 0 30px rgba(79, 125, 243, 0.08)",
-                    }}
-                    transition={{ duration: 0.5, ease: "easeInOut" }}
-                    whileHover={{
-                      scale: 1.03,
-                      boxShadow: theme === "dark"
-                        ? "0 8px 30px rgba(79, 125, 243, 0.3), 0 0 40px rgba(79, 125, 243, 0.2)"
-                        : "0 8px 30px rgba(79, 125, 243, 0.25), 0 0 40px rgba(79, 125, 243, 0.15)",
-                    }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                    whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    {/* Light streak animation */}
-                    <motion.div
-                      className="absolute inset-0 pointer-events-none"
-                      style={{
-                        background: `linear-gradient(90deg, 
-                          transparent, 
-                          rgba(255, 255, 255, 0.3), 
-                          transparent)`,
-                        width: "50%",
-                        height: "100%",
-                      }}
-                      animate={{
-                        x: ["-100%", "200%"],
-                      }}
-                      transition={{
-                        duration: 3,
-                        repeat: Infinity,
-                        repeatDelay: 2,
-                        ease: "easeInOut",
-                      }}
-                    />
-
                     <Link
                       href="/start-conversation"
-                      className="relative block px-3 md:px-4 lg:px-6 py-1.5 md:py-2 lg:py-2.5 text-sm md:text-base font-medium tracking-wide text-gray-900 dark:text-white transition-all duration-300 whitespace-nowrap outline-none focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-full hover:text-gray-950 dark:hover:text-white hover:scale-105"
+                      className="relative block px-3 md:px-4 lg:px-6 py-1.5 md:py-2 lg:py-2.5 text-sm md:text-base font-medium tracking-wide text-gray-900 dark:text-white transition-all duration-300 whitespace-nowrap rounded-full hover:text-gray-950 dark:hover:text-white hover:scale-[1.02] [outline:none] [&:focus]:outline-none [&:focus]:ring-0"
+                      style={{ outline: "none" }}
                     >
                       Start a Conversation
                     </Link>
