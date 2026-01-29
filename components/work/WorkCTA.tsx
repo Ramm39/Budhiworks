@@ -79,7 +79,7 @@ export function WorkCTA() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-balance relative leading-tight tracking-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-balance relative leading-tight tracking-tight">
             Let&apos;s build something{" "}
             <span className="bg-gradient-to-r from-accent-blue via-accent-cyan to-accent-blue bg-clip-text text-transparent relative">
               impactful

@@ -325,7 +325,7 @@ export function StartConversationVisual() {
           className="text-center mb-8 md:mb-12"
         >
           <motion.h1
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 sm:mb-4"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4"
             style={{
               textShadow: "0 0 30px rgba(79, 125, 243, 0.5), 0 0 60px rgba(34, 211, 238, 0.3)",
             }}

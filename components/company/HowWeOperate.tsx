@@ -58,7 +58,7 @@ export function HowWeOperate() {
             <span className="text-[#22D3EE] text-xs tracking-widest font-medium">HOW WE OPERATE</span>
             <span className="w-2 h-2 rounded-full bg-[#22D3EE]" />
           </motion.div>
-          <h2 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-6 relative">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 relative">
             <motion.span
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}

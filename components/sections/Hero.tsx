@@ -47,7 +47,7 @@ function HeroComponent() {
     []
   );
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 sm:pt-20 md:pt-24 lg:pt-32 pb-12 sm:pb-16 md:pb-20 px-4 sm:px-6 lg:px-8">
+    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden pt-16 sm:pt-20 md:pt-24 lg:pt-28 pb-10 sm:pb-12 md:pb-16 px-4 sm:px-6 lg:px-8">
       {/* Subtle overlay for text readability */}
       <div className="absolute inset-0 bg-black/10 dark:bg-black/20 z-[1]" />
 
@@ -61,7 +61,7 @@ function HeroComponent() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="space-y-3 sm:space-y-4 md:space-y-6"
           >
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-balance leading-tight text-white drop-shadow-2xl px-2">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-balance leading-tight text-white drop-shadow-2xl px-2">
               Custom Software &{" "}
               <span className="bg-gradient-to-r from-accent-blue to-accent-cyan bg-clip-text text-transparent relative inline-block">
                 Digital Solutions
@@ -78,7 +78,7 @@ function HeroComponent() {
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             className="max-w-3xl px-4"
           >
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-200 dark:text-gray-100 text-balance leading-relaxed font-light drop-shadow-lg">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 dark:text-gray-100 text-balance leading-relaxed font-light drop-shadow-lg">
               We design and build custom software, websites, and applications that help businesses operate better, scale confidently, and stay future-ready.
             </p>
           </motion.div>

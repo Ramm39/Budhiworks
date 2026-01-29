@@ -58,7 +58,7 @@ export function ServiceIncludes({ items }: ServiceIncludesProps) {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-16 text-gray-900 dark:text-white text-center leading-tight">
+          <h2 className="text-2xl md:text-3xl font-bold mb-12 text-gray-900 dark:text-white text-center leading-tight">
             What This Service Includes
           </h2>
           <ul className="space-y-5">

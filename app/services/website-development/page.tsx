@@ -1,7 +1,12 @@
+import dynamic from "next/dynamic";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { PageBackground } from "@/components/ui/PageBackground";
 import { BlurredSections } from "@/components/ui/BlurredSections";
+
+const PageBackground = dynamic(
+  () => import("@/components/ui/PageBackground").then((m) => ({ default: m.PageBackground })),
+  { ssr: false }
+);
 import { ServiceDetailHero } from "@/components/services/ServiceDetailHero";
 import { ServiceIncludes } from "@/components/services/ServiceIncludes";
 import { ServiceBenefits } from "@/components/services/ServiceBenefits";

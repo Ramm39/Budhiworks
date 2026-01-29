@@ -63,7 +63,7 @@ export function CompanyValues() {
             <span className="text-[#4F7DF3] text-xs tracking-widest font-medium">OUR VALUES</span>
             <span className="w-2 h-2 rounded-full bg-[#4F7DF3]" />
           </motion.div>
-          <h2 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-6 relative">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 relative">
             <motion.span
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}

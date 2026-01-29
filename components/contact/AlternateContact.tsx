@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export function AlternateContact() {
   return (
-    <section className="py-20 md:py-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-transparent">
+    <section className="py-12 md:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-transparent">
       {/* Low emphasis background */}
       <motion.div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] pointer-events-none opacity-0 dark:opacity-100"

@@ -55,7 +55,7 @@ export function ContactForm() {
   };
 
   return (
-    <section className="py-16 sm:py-20 md:py-28 lg:py-36 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-transparent">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-transparent">
       {/* Subtle background */}
       <motion.div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[750px] h-[450px] pointer-events-none opacity-0 dark:opacity-100"

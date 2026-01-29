@@ -27,7 +27,7 @@ const whyChooseUs = [
 
 export function ServiceWhyChooseUs() {
   return (
-    <section className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 relative">
+    <section className="py-12 md:py-20 px-4 sm:px-6 lg:px-8 relative">
       <div className="max-w-7xl mx-auto">
         <div className="relative z-10">
           {/* Title Section - Floating in space */}

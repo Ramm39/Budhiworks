@@ -27,7 +27,7 @@ const services = [
 
 export function Services() {
   return (
-    <section id="services" className="py-16 sm:py-20 md:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 relative">
+    <section id="services" className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative">
       <div className="max-w-6xl mx-auto">
         <div className="relative z-10">
           {/* Title Section */}
@@ -36,10 +36,10 @@ export function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-            className="mb-12 sm:mb-16 text-center"
+            className="mb-8 sm:mb-10 text-center"
           >
             {/* Large animated title */}
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-white mb-4 sm:mb-6 relative px-2">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 sm:mb-6 relative px-2">
               <motion.span
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}

@@ -69,7 +69,7 @@ export function SolutionsHero() {
             transition={{ duration: 1, ease: easeSmooth }}
             className="space-y-4 md:space-y-6"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-balance leading-tight text-white drop-shadow-2xl">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-balance leading-tight text-white drop-shadow-2xl">
               Solutions That{" "}
               <span className="bg-gradient-to-r from-accent-blue to-accent-cyan bg-clip-text text-transparent relative inline-block">
                 Work
@@ -83,7 +83,7 @@ export function SolutionsHero() {
             transition={{ duration: 1, delay: 0.15, ease: easeSmooth }}
             className="max-w-3xl"
           >
-            <p className="text-lg md:text-xl lg:text-2xl text-gray-200 dark:text-gray-100 text-balance leading-relaxed font-light drop-shadow-lg">
+            <p className="text-base md:text-lg lg:text-xl text-gray-200 dark:text-gray-100 text-balance leading-relaxed font-light drop-shadow-lg">
               We build custom software, systems, and tools that solve real business problems—engineered for reliability, designed for scale.
             </p>
           </motion.div>

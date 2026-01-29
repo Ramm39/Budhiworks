@@ -47,7 +47,7 @@ export function CompanyCTA() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-balance relative leading-tight tracking-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-balance relative leading-tight tracking-tight">
             Let&apos;s work{" "}
             <span className="text-gray-600 dark:text-gray-400">
               together

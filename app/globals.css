@@ -49,6 +49,18 @@ nav button {
   overflow-x: hidden;
 }
 
+/* Nav CTA "Start a Conversation" – no outline/box on focus or hover */
+nav a.nav-cta-link,
+nav a.nav-cta-link:hover,
+nav a.nav-cta-link:focus,
+nav a.nav-cta-link:focus-visible,
+nav a.nav-cta-link:active {
+  outline: none !important;
+  outline-offset: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);

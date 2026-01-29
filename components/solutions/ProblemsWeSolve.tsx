@@ -48,7 +48,7 @@ export function ProblemsWeSolve() {
           transition={{ duration: 1, ease: easeSmooth }}
           className="mb-16 text-center"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
             Challenges We{" "}
             <span className="bg-gradient-to-r from-[#4F7DF3] via-[#22D3EE] to-[#4F7DF3] bg-clip-text text-transparent">
               Tackle

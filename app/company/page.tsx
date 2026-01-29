@@ -1,15 +1,20 @@
+import dynamic from "next/dynamic";
 import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
-import { PageBackground } from "@/components/ui/PageBackground";
 import { BlurredSections } from "@/components/ui/BlurredSections";
 import { CompanyHero } from "@/components/company/CompanyHero";
-import { WhoWeAre } from "@/components/company/WhoWeAre";
-import { OurPhilosophy } from "@/components/company/OurPhilosophy";
-import { HowWeOperate } from "@/components/company/HowWeOperate";
-import { WhyClientsTrustUs } from "@/components/company/WhyClientsTrustUs";
-import { TeamCulture } from "@/components/company/TeamCulture";
-import { CompanyValues } from "@/components/company/CompanyValues";
-import { CompanyCTA } from "@/components/company/CompanyCTA";
+
+const PageBackground = dynamic(
+  () => import("@/components/ui/PageBackground").then((m) => ({ default: m.PageBackground })),
+  { ssr: false }
+);
+const Footer = dynamic(() => import("@/components/Footer").then((m) => ({ default: m.Footer })));
+const WhoWeAre = dynamic(() => import("@/components/company/WhoWeAre").then((m) => ({ default: m.WhoWeAre })));
+const OurPhilosophy = dynamic(() => import("@/components/company/OurPhilosophy").then((m) => ({ default: m.OurPhilosophy })));
+const HowWeOperate = dynamic(() => import("@/components/company/HowWeOperate").then((m) => ({ default: m.HowWeOperate })));
+const WhyClientsTrustUs = dynamic(() => import("@/components/company/WhyClientsTrustUs").then((m) => ({ default: m.WhyClientsTrustUs })));
+const TeamCulture = dynamic(() => import("@/components/company/TeamCulture").then((m) => ({ default: m.TeamCulture })));
+const CompanyValues = dynamic(() => import("@/components/company/CompanyValues").then((m) => ({ default: m.CompanyValues })));
+const CompanyCTA = dynamic(() => import("@/components/company/CompanyCTA").then((m) => ({ default: m.CompanyCTA })));
 
 export default function CompanyPage() {
   return (

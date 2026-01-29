@@ -27,7 +27,7 @@ const steps = [
 
 export function ProcessHighlight() {
   return (
-    <section className="py-20 md:py-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-transparent">
+    <section className="py-12 md:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-transparent">
       {/* Diagonal gradient flow */}
       <motion.div
         className="absolute inset-0 pointer-events-none opacity-0 dark:opacity-100"

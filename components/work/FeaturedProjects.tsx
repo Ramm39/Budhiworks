@@ -49,7 +49,7 @@ export function FeaturedProjects() {
                     ))}
                   </div>
                   
-                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-900 dark:text-white leading-tight">
+                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-gray-900 dark:text-white leading-tight">
                     {project.title}
                   </h2>
                   

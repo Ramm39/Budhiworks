@@ -91,7 +91,7 @@ export function SolutionsCTA() {
               </div>
             </motion.div>
 
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-balance leading-tight text-white">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-balance leading-tight text-white">
               Let&apos;s build the right{" "}
               <span className="bg-gradient-to-r from-[#4F7DF3] via-[#22D3EE] to-[#4F7DF3] bg-clip-text text-transparent">
                 solution

@@ -15,7 +15,7 @@ export function ServicesFinalCTA() {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 1, ease: easeSmooth }}
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-balance relative leading-tight tracking-tight text-white">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-balance relative leading-tight tracking-tight text-white">
             Let&apos;s build something that{" "}
             <span className="bg-gradient-to-r from-accent-blue to-accent-cyan bg-clip-text text-transparent relative">
               works for your business

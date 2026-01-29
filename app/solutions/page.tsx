@@ -1,14 +1,19 @@
+import dynamic from "next/dynamic";
 import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
-import { PageBackground } from "@/components/ui/PageBackground";
 import { BlurredSections } from "@/components/ui/BlurredSections";
 import { SolutionsHero } from "@/components/solutions/SolutionsHero";
-import { ProblemsWeSolve } from "@/components/solutions/ProblemsWeSolve";
-import { SolutionAreas } from "@/components/solutions/SolutionAreas";
-import { SolutionImpact } from "@/components/solutions/SolutionImpact";
-import { HowWeDeliver } from "@/components/solutions/HowWeDeliver";
-import { WhoSolutionsFor } from "@/components/solutions/WhoSolutionsFor";
-import { SolutionsCTA } from "@/components/solutions/SolutionsCTA";
+
+const PageBackground = dynamic(
+  () => import("@/components/ui/PageBackground").then((m) => ({ default: m.PageBackground })),
+  { ssr: false }
+);
+const Footer = dynamic(() => import("@/components/Footer").then((m) => ({ default: m.Footer })));
+const ProblemsWeSolve = dynamic(() => import("@/components/solutions/ProblemsWeSolve").then((m) => ({ default: m.ProblemsWeSolve })));
+const SolutionAreas = dynamic(() => import("@/components/solutions/SolutionAreas").then((m) => ({ default: m.SolutionAreas })));
+const SolutionImpact = dynamic(() => import("@/components/solutions/SolutionImpact").then((m) => ({ default: m.SolutionImpact })));
+const HowWeDeliver = dynamic(() => import("@/components/solutions/HowWeDeliver").then((m) => ({ default: m.HowWeDeliver })));
+const WhoSolutionsFor = dynamic(() => import("@/components/solutions/WhoSolutionsFor").then((m) => ({ default: m.WhoSolutionsFor })));
+const SolutionsCTA = dynamic(() => import("@/components/solutions/SolutionsCTA").then((m) => ({ default: m.SolutionsCTA })));
 
 export default function SolutionsPage() {
   return (

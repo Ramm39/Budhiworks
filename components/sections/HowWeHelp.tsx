@@ -31,7 +31,7 @@ const helpItems = [
 
 export function HowWeHelp() {
   return (
-    <section className="py-16 sm:py-20 md:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 relative">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative">
       <div className="max-w-7xl mx-auto">
         <div className="relative z-10">
           {/* Title Section */}
@@ -40,10 +40,10 @@ export function HowWeHelp() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-            className="mb-12 sm:mb-16 md:mb-20 text-center"
+            className="mb-8 sm:mb-10 md:mb-12 text-center"
           >
             {/* Large animated title */}
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-white leading-tight mb-4 sm:mb-6 relative px-2">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-4 sm:mb-6 relative px-2">
               <motion.span
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -109,7 +109,7 @@ export function HowWeHelp() {
                 <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 hover:border-[#22D3EE]/40 hover:bg-white/8 transition-all duration-500 relative overflow-hidden w-full h-full flex flex-col">
                   {/* Animated icon */}
                   <motion.div 
-                    className="text-3xl sm:text-4xl mb-4 sm:mb-6 opacity-80 group-hover:opacity-100"
+                    className="text-2xl sm:text-3xl mb-4 sm:mb-6 opacity-80 group-hover:opacity-100"
                     animate={{ 
                       rotate: [0, 5, -5, 0],
                       scale: [1, 1.1, 1]
@@ -127,7 +127,7 @@ export function HowWeHelp() {
                   {/* Animated metric */}
                   <div className="mb-4 sm:mb-6">
                     <motion.div 
-                      className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#22D3EE] mb-1 sm:mb-2"
+                      className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#22D3EE] mb-1 sm:mb-2"
                       initial={{ opacity: 0, scale: 0.5 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true }}

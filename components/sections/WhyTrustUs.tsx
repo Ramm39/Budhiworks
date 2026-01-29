@@ -27,7 +27,7 @@ const features = [
 
 export function WhyTrustUs() {
   return (
-    <section className="py-16 sm:py-20 md:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 relative">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative">
       <div className="max-w-7xl mx-auto">
         <div className="relative z-10">
           {/* Title Section - Floating in space */}
@@ -36,7 +36,7 @@ export function WhyTrustUs() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-            className="mb-12 sm:mb-16 md:mb-20 text-center"
+            className="mb-8 sm:mb-10 md:mb-12 text-center"
           >
             {/* Subtle badge */}
             <motion.div
@@ -46,21 +46,21 @@ export function WhyTrustUs() {
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
               className="inline-flex items-center gap-2 px-4 sm:px-6 py-1.5 sm:py-2 bg-[#22D3EE]/10 border border-[#22D3EE]/20 rounded-full mb-6 sm:mb-8 backdrop-blur-md"
             >
-              <motion.div 
+              <motion.div
                 className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#22D3EE]"
                 animate={{ scale: [1, 1.2, 1], opacity: [0.5, 1, 0.5] }}
                 transition={{ duration: 2, repeat: Infinity }}
               />
               <span className="text-[#22D3EE] text-[10px] sm:text-xs tracking-widest font-medium">WHY TRUST US</span>
-              <motion.div 
+              <motion.div
                 className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#22D3EE]"
                 animate={{ scale: [1, 1.2, 1], opacity: [0.5, 1, 0.5] }}
                 transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
               />
             </motion.div>
-            
+
             {/* Large animated title */}
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-white mb-4 sm:mb-6 relative px-2">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 sm:mb-6 relative px-2">
               <motion.span
                 initial={{ opacity: 0, x: -100 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -80,13 +80,13 @@ export function WhyTrustUs() {
                 PRINCIPLES
               </motion.span>
               {/* Animated glow behind title */}
-              <motion.span 
+              <motion.span
                 className="absolute inset-0 bg-gradient-to-r from-[#4F7DF3]/40 via-[#22D3EE]/40 to-[#4F7DF3]/40 blur-3xl opacity-60 -z-0"
                 animate={{ opacity: [0.4, 0.6, 0.4] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               />
             </h2>
-            
+
             {/* Animated separator */}
             <motion.div
               initial={{ width: 0, opacity: 0 }}
@@ -105,8 +105,8 @@ export function WhyTrustUs() {
                 initial={{ opacity: 0, y: 60, scale: 0.9 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true, margin: "-100px" }}
-                transition={{ 
-                  duration: 0.8, 
+                transition={{
+                  duration: 0.8,
                   delay: index * 0.15,
                   ease: [0.22, 1, 0.36, 1]
                 }}
@@ -116,23 +116,22 @@ export function WhyTrustUs() {
                 {/* Floating glass card */}
                 <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 lg:p-10 hover:border-[#22D3EE]/40 hover:bg-white/8 transition-all duration-500 overflow-hidden">
                   {/* Animated background glow */}
-                  <motion.div 
-                    className={`absolute inset-0 rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${
-                      feature.color === "accent-blue" 
+                  <motion.div
+                    className={`absolute inset-0 rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${feature.color === "accent-blue"
                         ? "bg-gradient-to-br from-[#4F7DF3]/20 via-transparent to-transparent"
                         : "bg-gradient-to-br from-[#22D3EE]/20 via-transparent to-transparent"
-                    }`}
-                    animate={{ 
+                      }`}
+                    animate={{
                       backgroundPosition: ["0% 0%", "100% 100%"],
                     }}
                     transition={{ duration: 3, repeat: Infinity, repeatType: "reverse" }}
                   />
-                  
+
                   {/* Content */}
                   <div className="relative z-10">
                     {/* Title with animated underline */}
                     <div className="mb-4 sm:mb-6">
-                      <motion.h3 
+                      <motion.h3
                         className="text-xl sm:text-2xl md:text-3xl font-semibold text-white mb-3 sm:mb-4 group-hover:text-[#22D3EE] transition-colors duration-300"
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
@@ -147,16 +146,15 @@ export function WhyTrustUs() {
                         whileInView={{ width: "100%" }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8, delay: index * 0.2 + 0.5 }}
-                        className={`h-0.5 bg-gradient-to-r ${
-                          feature.color === "accent-blue" 
-                            ? "from-[#4F7DF3]/80 via-[#4F7DF3]/40 to-transparent" 
+                        className={`h-0.5 bg-gradient-to-r ${feature.color === "accent-blue"
+                            ? "from-[#4F7DF3]/80 via-[#4F7DF3]/40 to-transparent"
                             : "from-[#22D3EE]/80 via-[#22D3EE]/40 to-transparent"
-                        } rounded-full`}
+                          } rounded-full`}
                       />
                     </div>
-                    
+
                     {/* Description */}
-                    <motion.p 
+                    <motion.p
                       className="text-base sm:text-lg md:text-xl text-gray-200 leading-relaxed"
                       initial={{ opacity: 0 }}
                       whileInView={{ opacity: 1 }}
@@ -166,12 +164,11 @@ export function WhyTrustUs() {
                       {feature.description}
                     </motion.p>
                   </div>
-                  
+
                   {/* Side accent bar */}
-                  <motion.div 
-                    className={`absolute left-0 top-0 bottom-0 w-1 rounded-l-2xl ${
-                      feature.color === "accent-blue" ? "bg-[#4F7DF3]" : "bg-[#22D3EE]"
-                    } opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
+                  <motion.div
+                    className={`absolute left-0 top-0 bottom-0 w-1 rounded-l-2xl ${feature.color === "accent-blue" ? "bg-[#4F7DF3]" : "bg-[#22D3EE]"
+                      } opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
                     initial={{ scaleY: 0 }}
                     whileHover={{ scaleY: 1 }}
                     transition={{ duration: 0.3 }}

@@ -69,7 +69,7 @@ export function CompanyHero() {
             transition={{ duration: 1, ease: easeSmooth }}
             className="space-y-3 sm:space-y-4 md:space-y-6"
           >
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-balance leading-tight text-white drop-shadow-2xl px-2">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-balance leading-tight text-white drop-shadow-2xl px-2">
               Building Software{" "}
               <span className="bg-gradient-to-r from-accent-blue to-accent-cyan bg-clip-text text-transparent relative inline-block">
                 the Right Way
@@ -83,7 +83,7 @@ export function CompanyHero() {
             transition={{ duration: 1, delay: 0.15, ease: easeSmooth }}
             className="max-w-3xl px-4"
           >
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-200 dark:text-gray-100 text-balance leading-relaxed font-light drop-shadow-lg">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 dark:text-gray-100 text-balance leading-relaxed font-light drop-shadow-lg">
               We&apos;re a team of engineers and designers who believe in building software that solves real problems, lasts long, and grows with your business.
             </p>
           </motion.div>

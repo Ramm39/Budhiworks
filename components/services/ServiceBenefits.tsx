@@ -78,7 +78,7 @@ export function ServiceBenefits({ benefits }: ServiceBenefitsProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-3xl md:text-4xl font-bold mb-16 text-gray-900 dark:text-white text-center leading-tight"
+          className="text-2xl md:text-3xl font-bold mb-12 text-gray-900 dark:text-white text-center leading-tight"
         >
           Benefits
         </motion.h2>

@@ -23,7 +23,7 @@ const nextConfig = {
   },
   experimental: {
     optimizeCss: true,
-    optimizePackageImports: ['framer-motion', '@react-three/fiber', '@react-three/drei'],
+    optimizePackageImports: ['framer-motion', '@react-three/fiber'],
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
