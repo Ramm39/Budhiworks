@@ -27,11 +27,11 @@ function NavbarComponent() {
   const pathname = usePathname();
   const { scrollY } = useScroll();
 
-  // Transform scroll position to opacity and blur values
-  const navbarOpacity = useTransform(scrollY, [0, 20], [0, 0.95]);
+  // Transform scroll position to opacity and blur values (solid bar, minimal transparency)
+  const navbarOpacity = useTransform(scrollY, [0, 20], [0.94, 0.98]);
   const navbarBlur = useTransform(scrollY, [0, 20], [0, 20]);
   const navbarY = useTransform(scrollY, [0, 20], [0, -2]);
-  const borderOpacity = useTransform(scrollY, [0, 20], [0, 0.15]);
+  const borderOpacity = useTransform(scrollY, [0, 20], [0.15, 0.25]);
 
   // Memoize nav items
   const navItems = useMemo(() => ["Services", "Solutions", "Work", "Company"], []);
@@ -130,7 +130,7 @@ function NavbarComponent() {
           ease: [0.4, 0, 0.2, 1]
         }}
       >
-        {/* Glassmorphic background */}
+        {/* Solid glassmorphic background - high opacity so it doesn't mix with page */}
         <motion.div
           className="absolute inset-0 w-full"
           style={{
@@ -250,16 +250,17 @@ function NavbarComponent() {
                   >
                     <Component
                       href={href}
-                      className="relative group"
+                      className="relative group block py-1"
                     >
                       <motion.span
-                        className={`text-xs lg:text-sm font-light tracking-wider transition-all duration-300 ${active
+                        className={`inline-block text-sm lg:text-base font-medium tracking-wider transition-all duration-300 ${active
                           ? "text-accent-blue dark:text-accent-cyan"
                           : "text-gray-600 dark:text-gray-400"
                           }`}
                         whileHover={{
-                          letterSpacing: "0.05em",
-                          color: theme === "dark" ? "#4F7DF3" : "#4F7DF3",
+                          letterSpacing: "0.06em",
+                          color: theme === "dark" ? "#ffffff" : "#0f172a",
+                          scale: 1.08,
                         }}
                         animate={active ? {
                           textShadow: [
@@ -330,14 +331,14 @@ function NavbarComponent() {
                   className="hidden md:block"
                 >
                   <motion.div
-                    className="relative overflow-hidden rounded-full"
+                    className="relative overflow-hidden rounded-full outline-none focus-within:outline-none"
                     style={{
                       background: theme === "dark"
-                        ? "linear-gradient(135deg, rgba(79, 125, 243, 0.2) 0%, rgba(34, 211, 238, 0.15) 100%)"
-                        : "linear-gradient(135deg, rgba(79, 125, 243, 0.15) 0%, rgba(34, 211, 238, 0.1) 100%)",
+                        ? "linear-gradient(135deg, rgba(79, 125, 243, 0.25) 0%, rgba(34, 211, 238, 0.2) 100%)"
+                        : "linear-gradient(135deg, rgba(79, 125, 243, 0.2) 0%, rgba(34, 211, 238, 0.15) 100%)",
                       backdropFilter: "blur(10px)",
                       WebkitBackdropFilter: "blur(10px)",
-                      border: `1px solid ${theme === "dark" ? "rgba(79, 125, 243, 0.3)" : "rgba(79, 125, 243, 0.2)"}`,
+                      border: `1px solid ${theme === "dark" ? "rgba(79, 125, 243, 0.4)" : "rgba(79, 125, 243, 0.3)"}`,
                     }}
                     animate={{
                       boxShadow: theme === "dark"
@@ -377,7 +378,7 @@ function NavbarComponent() {
 
                     <Link
                       href="/start-conversation"
-                      className="relative block px-3 md:px-4 lg:px-6 py-1.5 md:py-2 lg:py-2.5 text-xs md:text-sm font-light tracking-wide text-gray-900 dark:text-white transition-all duration-300 whitespace-nowrap"
+                      className="relative block px-3 md:px-4 lg:px-6 py-1.5 md:py-2 lg:py-2.5 text-sm md:text-base font-medium tracking-wide text-gray-900 dark:text-white transition-all duration-300 whitespace-nowrap outline-none focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-full hover:text-gray-950 dark:hover:text-white hover:scale-105"
                     >
                       Start a Conversation
                     </Link>
