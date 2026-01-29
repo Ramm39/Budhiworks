@@ -130,15 +130,10 @@ function NavbarComponent() {
           ease: [0.4, 0, 0.2, 1]
         }}
       >
-        {/* Solid background - high opacity so it doesn't mix with page content */}
+        {/* Solid background - dark: follows document theme so navbar isn't white in dark mode */}
         <motion.div
-          className={`absolute inset-0 w-full backdrop-blur-md ${
-            theme === "dark" ? "bg-[rgba(11,15,25,0.96)]" : "bg-[rgba(255,255,255,0.96)]"
-          }`}
+          className="absolute inset-0 w-full backdrop-blur-md bg-[rgba(255,255,255,0.96)] dark:bg-[rgba(11,15,25,0.96)]"
           style={{
-            backgroundColor: theme === "dark"
-              ? `rgba(11, 15, 25, ${navbarOpacity})`
-              : `rgba(255, 255, 255, ${navbarOpacity})`,
             backdropFilter: `blur(${navbarBlur}px)`,
             WebkitBackdropFilter: `blur(${navbarBlur}px)`,
           }}
@@ -252,7 +247,7 @@ function NavbarComponent() {
                   >
                     <Component
                       href={href}
-                      className="relative group block py-1"
+                      className="relative group block py-1.5 px-3 rounded-lg outline-none focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/50 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-[#0b0f19] transition-colors duration-200 hover:bg-white/5 dark:hover:bg-white/5"
                     >
                       <motion.span
                         className={`inline-block text-sm lg:text-base font-medium tracking-wider transition-all duration-300 ${active
@@ -282,9 +277,9 @@ function NavbarComponent() {
                         {item}
                       </motion.span>
 
-                      {/* Animated underline - horizontal line only */}
+                      {/* Animated underline - horizontal line only, rounded */}
                       <span
-                        className={`absolute bottom-0 left-0 right-0 block h-0.5 rounded-full origin-center transition-all duration-300 ${
+                        className={`absolute bottom-0.5 left-2 right-2 block h-0.5 rounded-full origin-center transition-all duration-300 ${
                           active ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"
                         } group-hover:opacity-100 group-hover:scale-x-100`}
                         style={{
@@ -388,7 +383,7 @@ function NavbarComponent() {
                     key={item}
                     href={href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`text-base font-light tracking-wide py-3 px-2 transition-all duration-300 touch-manipulation w-full max-w-full overflow-x-hidden whitespace-nowrap ${active
+                    className={`text-base font-medium tracking-wide py-3 px-4 rounded-lg outline-none focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/50 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-[#0b0f19] transition-colors duration-200 hover:bg-white/5 dark:hover:bg-white/5 touch-manipulation w-full max-w-full overflow-x-hidden whitespace-nowrap ${active
                       ? "text-accent-blue dark:text-accent-cyan"
                       : "text-gray-600 dark:text-gray-400"
                       }`}
