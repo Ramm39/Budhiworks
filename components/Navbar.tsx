@@ -191,7 +191,7 @@ function NavbarComponent() {
                   >
                     <Image
                       src="/images/logo.png?v=2"
-                      alt="budhiworks"
+                      alt="Buddhiworks"
                       width={252}
                       height={63}
                       className="h-10 w-auto sm:h-11 md:h-14 lg:h-16 object-contain transition-all duration-300"
@@ -215,7 +215,7 @@ function NavbarComponent() {
                       ease: [0.4, 0, 0.2, 1],
                     }}
                   >
-                    Budhiworks
+                    Buddhiworks
                   </motion.span>
                 </Link>
               </motion.div>

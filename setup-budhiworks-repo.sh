@@ -1,6 +1,6 @@
 #!/bin/bash
-# Create git repo named budhiworks (remote: budhiworks)
-# Run from project root: ./setup-budhiworks-repo.sh [remote-url]
+# Create git repo named Buddhiworks (remote: Buddhiworks)
+# Run from project root: ./setup-Buddhiworks-repo.sh [remote-url]
 
 set -e
 cd "$(dirname "$0")"
@@ -12,19 +12,19 @@ else
   echo "Git repository initialized."
 fi
 
-# Add remote named "budhiworks" if URL provided
+# Add remote named "Buddhiworks" if URL provided
 if [ -n "$1" ]; then
-  if git remote get-url budhiworks 2>/dev/null; then
-    git remote set-url budhiworks "$1"
-    echo "Updated remote 'budhiworks' to $1"
+  if git remote get-url Buddhiworks 2>/dev/null; then
+    git remote set-url Buddhiworks "$1"
+    echo "Updated remote 'Buddhiworks' to $1"
   else
-    git remote add budhiworks "$1"
-    echo "Added remote 'budhiworks' -> $1"
+    git remote add Buddhiworks "$1"
+    echo "Added remote 'Buddhiworks' -> $1"
   fi
 else
-  echo "To add remote 'budhiworks', run:"
-  echo "  git remote add budhiworks <your-repo-url>"
-  echo "  e.g. git remote add budhiworks https://github.com/budhiworks/IT.git"
+  echo "To add remote 'Buddhiworks', run:"
+  echo "  git remote add Buddhiworks <your-repo-url>"
+  echo "  e.g. git remote add Buddhiworks https://github.com/Buddhiworks/IT.git"
 fi
 
 git add .
@@ -37,4 +37,4 @@ else
 fi
 
 echo ""
-echo "Done. To push: git push -u budhiworks main"
+echo "Done. To push: git push -u Buddhiworks main"

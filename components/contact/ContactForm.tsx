@@ -28,7 +28,7 @@ export function ContactForm() {
     setIsSubmitting(true);
     setSubmitStatus("idle");
     try {
-      const res = await fetch("https://formsubmit.co/ajax/budhiworks@gmail.com", {
+      const res = await fetch("https://formsubmit.co/ajax/buddhiworks@gmail.com", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
@@ -176,7 +176,7 @@ export function ContactForm() {
             )}
             {submitStatus === "error" && (
               <p className="mt-3 text-sm text-red-600 dark:text-red-400 text-center">
-                Something went wrong. Please try again or email budhiworks@gmail.com.
+                Something went wrong. Please try again or email buddhiworks@gmail.com.
               </p>
             )}
             {submitStatus === "idle" && (

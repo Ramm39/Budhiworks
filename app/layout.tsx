@@ -21,7 +21,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Budhiworks - Custom Software & Digital Solutions",
+  title: "Buddhiworks - Custom Software & Digital Solutions",
   description: "We design and build custom software, websites, and applications that help businesses operate better, scale confidently, and stay future-ready.",
   icons: {
     icon: "/images/logo.png?v=2",

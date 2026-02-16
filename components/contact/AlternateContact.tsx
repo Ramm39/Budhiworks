@@ -26,10 +26,10 @@ export function AlternateContact() {
             Prefer to reach out directly?
           </p>
           <a
-            href="mailto:budhiworks@gmail.com"
+            href="mailto:buddhiworks@gmail.com"
             className="block text-base text-gray-700 dark:text-gray-300 hover:text-accent-blue dark:hover:text-accent-cyan transition-colors"
           >
-            budhiworks@gmail.com
+            buddhiworks@gmail.com
           </a>
           <a
             href="tel:+919978635290"

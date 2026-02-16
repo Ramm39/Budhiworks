@@ -1,6 +1,6 @@
-# Budhiworks - Homepage
+# Buddhiworks - Homepage
 
-A futuristic, minimal, premium homepage for Budhiworks built with Next.js 14, Tailwind CSS, and Framer Motion.
+A futuristic, minimal, premium homepage for Buddhiworks built with Next.js 14, Tailwind CSS, and Framer Motion.
 
 ## Features
 
@@ -124,4 +124,4 @@ Update `app/globals.css` for global styles.
 
 ## License
 
-Private - Budhiworks
+Private - Buddhiworks

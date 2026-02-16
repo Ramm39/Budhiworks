@@ -34,7 +34,7 @@ function FooterComponent({ transparent }: { transparent?: boolean }) {
             <Link href="/" className="inline-block mb-4">
               <Image
                 src="/images/logo.png?v=2"
-                alt="Budhiworks"
+                alt="Buddhiworks"
                 width={140}
                 height={36}
                 className="h-9 w-auto object-contain"
@@ -96,10 +96,10 @@ function FooterComponent({ transparent }: { transparent?: boolean }) {
             <ul className={`space-y-2 text-sm transition-colors ${transparent ? "text-gray-300" : "text-gray-600 dark:text-gray-400"}`}>
               <li>
                 <a
-                  href="mailto:budhiworks@gmail.com"
+                  href="mailto:buddhiworks@gmail.com"
                   className="hover:text-accent-cyan transition-colors"
                 >
-                  budhiworks@gmail.com
+                  buddhiworks@gmail.com
                 </a>
               </li>
               <li>
@@ -131,7 +131,7 @@ function FooterComponent({ transparent }: { transparent?: boolean }) {
           }
         >
           <p className={`text-xs sm:text-sm text-center sm:text-left ${transparent ? "text-gray-400" : "text-gray-500 dark:text-gray-500"}`}>
-            © {new Date().getFullYear()} Budhiworks. All rights reserved.
+            © {new Date().getFullYear()} Buddhiworks. All rights reserved.
           </p>
           <div className="flex gap-4 sm:gap-6">
             <a

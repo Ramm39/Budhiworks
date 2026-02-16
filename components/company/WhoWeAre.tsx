@@ -70,7 +70,7 @@ export function WhoWeAre() {
               transition={{ duration: 1, delay: 0.25, ease: easeSmooth }}
               className="relative z-10 block bg-gradient-to-r from-[#4F7DF3] via-[#22D3EE] to-[#4F7DF3] bg-clip-text text-transparent"
             >
-              BUDHIWORKS
+              Buddhiworks
             </motion.span>
           </h2>
         </motion.div>
@@ -84,7 +84,7 @@ export function WhoWeAre() {
         >
           <div className="max-w-4xl mx-auto space-y-6 text-lg md:text-xl text-gray-200 dark:text-gray-100 leading-relaxed text-center">
             <p>
-              Budhiworks is a software development company that builds custom applications, systems, and tools for businesses. We work with growing companies, startups, and teams who need reliable software that scales.
+              Buddhiworks is a software development company that builds custom applications, systems, and tools for businesses. We work with growing companies, startups, and teams who need reliable software that scales.
             </p>
             <p>
               We think about software differently. Instead of rushing to launch or adding unnecessary features, we focus on understanding your business, building the right solution, and making sure it works well for the long term.
