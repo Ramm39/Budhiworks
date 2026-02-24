@@ -1,12 +1,22 @@
 "use client";
 
-import { useRef } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { useMemo } from "react";
+import { useRef, useMemo } from "react";
+import { useFrame, invalidate, Canvas } from "@react-three/fiber";
 import * as THREE from "three";
 
-// Floating particles component - optimized with reduced count
-function FloatingParticles({ count = 120 }: { count?: number }) {
+/**
+ * With frameloop="demand", call invalidate() only when tab is visible
+ * so the CPU can become idle when the tab is in the background (Lighthouse).
+ */
+function VisibilityInvalidator() {
+  useFrame(() => {
+    if (typeof document !== "undefined" && document.visibilityState === "visible") {
+      invalidate();
+    }
+  });
+  return null;
+}
+function FloatingParticles({ count = 45 }: { count?: number }) {
   const meshRef = useRef<THREE.InstancedMesh>(null);
   const particles = useMemo(() => {
     const temp = [];
@@ -65,8 +75,8 @@ function FloatingParticles({ count = 120 }: { count?: number }) {
 function DigitalTerrain() {
   const meshRef = useRef<THREE.Mesh>(null);
   const geometry = useMemo(() => {
-    // Reduced segments for better performance (100x100 -> 60x60)
-    const geom = new THREE.PlaneGeometry(200, 200, 60, 60);
+    // Reduced segments for CPU idle (40x40)
+    const geom = new THREE.PlaneGeometry(200, 200, 40, 40);
     const positions = geom.attributes.position.array as Float32Array;
 
     for (let i = 0; i < positions.length; i += 3) {
@@ -129,13 +139,13 @@ function DigitalTerrain() {
   );
 }
 
-// Central energy stream component - flowing particle wave
+// Central energy stream component - reduced sphere count for performance
 function EnergyStream() {
   const groupRef = useRef<THREE.Group>(null);
   const particles = useMemo(() => {
-    return Array.from({ length: 30 }).map((_, i) => ({
+    return Array.from({ length: 12 }).map((_, i) => ({
       index: i,
-      phase: (i / 30) * Math.PI * 2,
+      phase: (i / 12) * Math.PI * 2,
     }));
   }, []);
 
@@ -144,7 +154,6 @@ function EnergyStream() {
     const time = state.clock.getElapsedTime();
     groupRef.current.rotation.y = time * 0.15;
 
-    // Animate particles in a flowing wave pattern
     particles.forEach((particle, i) => {
       const child = groupRef.current!.children[i] as THREE.Mesh;
       if (child) {
@@ -153,9 +162,8 @@ function EnergyStream() {
         const angle = particle.phase + time * 0.2;
         child.position.x = Math.sin(angle) * radius;
         child.position.z = Math.cos(angle) * radius;
-        child.position.y = (i - 15) * 1.5 + Math.sin(time * 0.3 + particle.phase) * 2;
+        child.position.y = (i - 6) * 2.5 + Math.sin(time * 0.3 + particle.phase) * 2;
 
-        // Scale based on position in wave
         const scale = 0.4 + Math.abs(Math.sin(time * 0.5 + particle.phase)) * 0.3;
         child.scale.setScalar(scale);
       }
@@ -169,11 +177,11 @@ function EnergyStream() {
           key={i}
           position={[
             Math.sin(particle.phase) * 12,
-            (i - 15) * 1.5,
+            (i - 6) * 2.5,
             Math.cos(particle.phase) * 12,
           ]}
         >
-          <sphereGeometry args={[0.4, 16, 16]} />
+          <sphereGeometry args={[0.4, 8, 8]} />
           <meshStandardMaterial
             color="#22D3EE"
             emissive="#22D3EE"
@@ -191,12 +199,13 @@ function EnergyStream() {
 function Scene3D() {
   return (
     <>
+      <VisibilityInvalidator />
       <ambientLight intensity={0.2} />
       <pointLight position={[10, 10, 10]} intensity={0.5} color="#4F7DF3" />
       <pointLight position={[-10, -10, -10]} intensity={0.3} color="#22D3EE" />
       <directionalLight position={[0, 10, 5]} intensity={0.3} color="#ffffff" />
 
-      <FloatingParticles count={100} />
+      <FloatingParticles count={45} />
       <DigitalTerrain />
       <EnergyStream />
     </>
@@ -220,19 +229,21 @@ export function FuturisticHeroBackground() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-[#4F7DF3]/5 rounded-full blur-[150px]" />
       </div>
 
-      {/* 3D Canvas - optimized performance */}
+      {/* 3D Canvas - demand frameloop so tab hidden = CPU idle for Lighthouse */}
       <div className="absolute inset-0 opacity-60">
         <Canvas
           camera={{ position: [0, 0, 50], fov: 75 }}
-          gl={{ 
-            alpha: true, 
-            antialias: false, // Disable antialiasing for better performance
+          gl={{
+            alpha: true,
+            antialias: false,
             powerPreference: "high-performance",
             stencil: false,
             depth: true,
           }}
-          dpr={[1, 2]} // Limit pixel ratio for better performance
-          performance={{ min: 0.5 }} // Reduce quality when FPS drops
+          dpr={[1, 1.5]}
+          frameloop="demand"
+          performance={{ min: 0.5 }}
+          onCreated={({ invalidate: inv }) => inv()}
         >
           <Scene3D />
         </Canvas>
@@ -240,7 +251,7 @@ export function FuturisticHeroBackground() {
 
       {/* CSS Particle Layer */}
       <div className="absolute inset-0 overflow-hidden">
-        {Array.from({ length: 50 }).map((_, i) => (
+        {Array.from({ length: 25 }).map((_, i) => (
           <div
             key={i}
             className="absolute rounded-full"
@@ -260,7 +271,7 @@ export function FuturisticHeroBackground() {
 
       {/* Micro light specs - reduced count */}
       <div className="absolute inset-0 overflow-hidden">
-        {Array.from({ length: 60 }).map((_, i) => (
+        {Array.from({ length: 30 }).map((_, i) => (
           <div
             key={i}
             className="absolute rounded-full"

@@ -1,12 +1,21 @@
 "use client";
 
 import { useRef } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame, invalidate } from "@react-three/fiber";
 import { useMemo } from "react";
 import * as THREE from "three";
 
-// Hexagonal particles component - different from hero's spheres
-function HexagonalParticles({ count = 200 }: { count?: number }) {
+function VisibilityInvalidator() {
+  useFrame(() => {
+    if (typeof document !== "undefined" && document.visibilityState === "visible") {
+      invalidate();
+    }
+  });
+  return null;
+}
+
+// Hexagonal particles component - reduced count for performance
+function HexagonalParticles({ count = 70 }: { count?: number }) {
   const meshRef = useRef<THREE.InstancedMesh>(null);
   const particles = useMemo(() => {
     const temp = [];
@@ -82,7 +91,7 @@ function HexagonalParticles({ count = 200 }: { count?: number }) {
 function GeometricGridTerrain() {
   const meshRef = useRef<THREE.Mesh>(null);
   const geometry = useMemo(() => {
-    const geom = new THREE.PlaneGeometry(200, 200, 80, 80);
+    const geom = new THREE.PlaneGeometry(200, 200, 50, 50);
     const positions = geom.attributes.position.array as Float32Array;
 
     for (let i = 0; i < positions.length; i += 3) {
@@ -178,7 +187,7 @@ function OrbitalRings() {
           key={i}
           rotation={[Math.PI / 2, 0, 0]}
         >
-          <torusGeometry args={[ring.radius, 0.1, 16, 64]} />
+          <torusGeometry args={[ring.radius, 0.1, 12, 32]} />
           <meshStandardMaterial
             color={i === 0 ? "#22D3EE" : i === 1 ? "#4F7DF3" : "#22D3EE"}
             emissive={i === 0 ? "#22D3EE" : i === 1 ? "#4F7DF3" : "#22D3EE"}
@@ -192,11 +201,11 @@ function OrbitalRings() {
   );
 }
 
-// Floating geometric shapes
+// Floating geometric shapes - reduced count
 function FloatingGeometricShapes() {
   const groupRef = useRef<THREE.Group>(null);
   const shapes = useMemo(() => {
-    return Array.from({ length: 15 }).map((_, i) => ({
+    return Array.from({ length: 8 }).map((_, i) => ({
       type: i % 3 === 0 ? 'box' : i % 3 === 1 ? 'octahedron' : 'tetrahedron',
       position: [
         (Math.random() - 0.5) * 100,
@@ -264,12 +273,13 @@ function FloatingGeometricShapes() {
 function Scene3D() {
   return (
     <>
+      <VisibilityInvalidator />
       <ambientLight intensity={0.25} />
       <pointLight position={[10, 10, 10]} intensity={0.6} color="#4F7DF3" />
       <pointLight position={[-10, -10, -10]} intensity={0.4} color="#22D3EE" />
       <directionalLight position={[0, 10, 5]} intensity={0.35} color="#ffffff" />
 
-      <HexagonalParticles count={120} />
+      <HexagonalParticles count={70} />
       <GeometricGridTerrain />
       <OrbitalRings />
       <FloatingGeometricShapes />
@@ -294,13 +304,15 @@ export function ServicesHeroBackground() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1100px] h-[1100px] bg-[#22D3EE]/6 rounded-full blur-[160px]" />
       </div>
 
-      {/* 3D Canvas */}
+      {/* 3D Canvas - demand frameloop for CPU idle when tab hidden */}
       <div className="absolute inset-0 opacity-65">
         <Canvas
           camera={{ position: [0, 0, 50], fov: 75 }}
           gl={{ alpha: true, antialias: false }}
-          dpr={[1, 2]}
+          dpr={[1, 1.5]}
+          frameloop="demand"
           performance={{ min: 0.5 }}
+          onCreated={({ invalidate: inv }) => inv()}
         >
           <Scene3D />
         </Canvas>
@@ -308,7 +320,7 @@ export function ServicesHeroBackground() {
 
       {/* CSS Hexagonal Particle Layer - reduced for performance */}
       <div className="absolute inset-0 overflow-hidden">
-        {Array.from({ length: 30 }).map((_, i) => (
+        {Array.from({ length: 15 }).map((_, i) => (
           <div
             key={i}
             className="absolute"
@@ -330,7 +342,7 @@ export function ServicesHeroBackground() {
 
       {/* Geometric light specs - reduced for performance */}
       <div className="absolute inset-0 overflow-hidden">
-        {Array.from({ length: 60 }).map((_, i) => (
+        {Array.from({ length: 25 }).map((_, i) => (
           <div
             key={i}
             className="absolute"

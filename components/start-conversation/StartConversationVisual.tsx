@@ -1,12 +1,21 @@
 "use client";
 
 import { useRef, useMemo } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame, invalidate } from "@react-three/fiber";
 import * as THREE from "three";
 import { motion } from "framer-motion";
 
-// Floating particles component
-function FloatingParticles({ count = 120 }: { count?: number }) {
+function VisibilityInvalidator() {
+  useFrame(() => {
+    if (typeof document !== "undefined" && document.visibilityState === "visible") {
+      invalidate();
+    }
+  });
+  return null;
+}
+
+// Floating particles - reduced for performance
+function FloatingParticles({ count = 50 }: { count?: number }) {
   const meshRef = useRef<THREE.InstancedMesh>(null);
   const particles = useMemo(() => {
     const temp = [];
@@ -64,7 +73,7 @@ function AbstractWaves() {
   const meshRef = useRef<THREE.Mesh>(null);
   const overlayRef = useRef<THREE.Mesh>(null);
   const geometry = useMemo(() => {
-    const geom = new THREE.PlaneGeometry(180, 180, 80, 80);
+    const geom = new THREE.PlaneGeometry(180, 180, 50, 50);
     const positions = geom.attributes.position.array as Float32Array;
 
     for (let i = 0; i < positions.length; i += 3) {
@@ -144,8 +153,8 @@ function LightRays() {
 
   return (
     <group ref={groupRef}>
-      {Array.from({ length: 8 }).map((_, i) => {
-        const angle = (i / 8) * Math.PI * 2;
+      {Array.from({ length: 4 }).map((_, i) => {
+        const angle = (i / 4) * Math.PI * 2;
         return (
           <mesh
             key={i}
@@ -175,12 +184,13 @@ function LightRays() {
 function Scene3D() {
   return (
     <>
+      <VisibilityInvalidator />
       <ambientLight intensity={0.15} />
       <pointLight position={[8, 8, 8]} intensity={0.4} color="#4F7DF3" />
       <pointLight position={[-8, -8, -8]} intensity={0.25} color="#22D3EE" />
       <directionalLight position={[0, 8, 4]} intensity={0.25} color="#ffffff" />
 
-      <FloatingParticles count={80} />
+      <FloatingParticles count={50} />
       <AbstractWaves />
       <LightRays />
     </>
@@ -234,13 +244,15 @@ export function StartConversationVisual() {
         />
       </div>
 
-      {/* 3D Canvas */}
+      {/* 3D Canvas - demand frameloop for CPU idle */}
       <div className="absolute inset-0 opacity-50">
         <Canvas
           camera={{ position: [0, 0, 45], fov: 70 }}
           gl={{ alpha: true, antialias: false }}
-          dpr={[1, 2]}
+          dpr={[1, 1.5]}
+          frameloop="demand"
           performance={{ min: 0.5 }}
+          onCreated={({ invalidate: inv }) => inv()}
         >
           <Scene3D />
         </Canvas>

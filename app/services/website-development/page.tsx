@@ -23,7 +23,7 @@ export default function WebsiteDevelopmentPage() {
       <ServiceDetailHero
         title="Website Development"
         subtitle="Fast, responsive, and reliable websites built for clarity, performance, and results that drive your business forward."
-        backgroundImage="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=1920&q=80"
+        backgroundImage="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=1200&q=60"
       />
       <BlurredSections>
       <ServiceIncludes

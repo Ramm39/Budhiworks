@@ -23,7 +23,7 @@ export default function WebApplicationDevelopmentPage() {
       <ServiceDetailHero
         title="Web & Application Development"
         subtitle="Scalable web applications that help teams manage operations, data, and workflows efficiently and effectively."
-        backgroundImage="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=1920&q=80"
+        backgroundImage="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=1200&q=60"
       />
       <BlurredSections>
       <ServiceIncludes

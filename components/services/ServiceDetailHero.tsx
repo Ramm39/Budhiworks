@@ -19,10 +19,9 @@ export function ServiceDetailHero({ title, subtitle, backgroundImage }: ServiceD
             src={backgroundImage}
             alt={title}
             fill
-            sizes="(max-width: 768px) 100vw, 1920px"
+            sizes="(max-width: 768px) 100vw, 1200px"
             className="object-cover opacity-[0.07]"
-            priority
-            quality={50}
+            quality={30}
           />
         </div>
       )}

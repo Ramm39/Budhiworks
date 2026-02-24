@@ -23,7 +23,7 @@ export default function UIUXDesignPage() {
       <ServiceDetailHero
         title="UI / UX Design"
         subtitle="Clean, intuitive design that makes complex systems simple, turning user challenges into seamless experiences."
-        backgroundImage="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1920&q=80"
+        backgroundImage="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200&q=60"
       />
       <BlurredSections>
       <ServiceIncludes

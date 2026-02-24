@@ -564,7 +564,7 @@ main {
     }
   }
 
-  /* Active nav item glow pulse */
+  /* Active nav item glow pulse - CSS animation for performance */
   @keyframes activeGlowPulse {
     0%,
     100% {
@@ -574,6 +574,10 @@ main {
       text-shadow: 0 0 16px rgba(79, 125, 243, 0.6),
         0 0 24px rgba(34, 211, 238, 0.4);
     }
+  }
+
+  .active-nav-glow {
+    animation: activeGlowPulse 5s ease-in-out infinite;
   }
 
   /* Logo glow pulse */

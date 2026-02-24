@@ -34,13 +34,13 @@ function NavbarComponent() {
   // Memoize nav items
   const navItems = useMemo(() => ["Services", "Solutions", "Work", "Company"], []);
 
-  // Memoize particle shimmer positions
+  // Memoize particle shimmer positions - reduced to 2 for performance (Lighthouse CPU idle)
   const particlePositions = useMemo(
-    () => Array.from({ length: 6 }, (_, i) => ({
-      left: `${15 + i * 15}%`,
-      top: `${20 + (i % 3) * 20}%`,
-      delay: i * 0.3,
-      duration: 4 + i * 0.5,
+    () => Array.from({ length: 2 }, (_, i) => ({
+      left: `${30 + i * 40}%`,
+      top: "30%",
+      delay: i * 0.5,
+      duration: 5,
     })),
     []
   );
@@ -193,6 +193,7 @@ function NavbarComponent() {
                       alt="Buddhiworks"
                       width={252}
                       height={63}
+                      sizes="(max-width: 640px) 120px, (max-width: 1024px) 160px, 252px"
                       className="h-10 w-auto sm:h-11 md:h-14 lg:h-16 object-contain transition-all duration-300"
                       priority
                     />
@@ -250,27 +251,13 @@ function NavbarComponent() {
                     >
                       <motion.span
                         className={`inline-block text-sm lg:text-base font-medium tracking-wider transition-all duration-300 ${active
-                          ? "text-accent-blue dark:text-accent-cyan"
+                          ? "text-accent-blue dark:text-accent-cyan active-nav-glow"
                           : "text-gray-600 dark:text-gray-400"
                           }`}
                         whileHover={{
                           letterSpacing: "0.06em",
                           color: theme === "dark" ? "#ffffff" : "#0f172a",
                           scale: 1.08,
-                        }}
-                        animate={active ? {
-                          textShadow: [
-                            "0 0 8px rgba(79, 125, 243, 0.3)",
-                            "0 0 16px rgba(79, 125, 243, 0.6), 0 0 24px rgba(34, 211, 238, 0.4)",
-                            "0 0 8px rgba(79, 125, 243, 0.3)",
-                          ],
-                        } : {}}
-                        transition={active ? {
-                          duration: 5,
-                          repeat: Infinity,
-                          ease: "easeInOut",
-                        } : {
-                          duration: 0.3,
                         }}
                       >
                         {item}

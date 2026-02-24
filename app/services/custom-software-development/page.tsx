@@ -23,7 +23,7 @@ export default function CustomSoftwareDevelopmentPage() {
       <ServiceDetailHero
         title="Custom Software Development"
         subtitle="Tailored software solutions designed around your business workflows, built to scale and evolve with your needs."
-        backgroundImage="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1920&q=80"
+        backgroundImage="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&q=60"
       />
       <BlurredSections>
       <ServiceIncludes
