@@ -27,10 +27,6 @@ export const metadata: Metadata = {
     icon: "/images/logo.png?v=2",
     apple: "/images/logo.png?v=2",
   },
-  other: {
-    "preconnect-google-fonts": "https://fonts.googleapis.com",
-    "preconnect-google-fonts-2": "https://fonts.gstatic.com",
-  },
 };
 
 export const viewport: Viewport = {

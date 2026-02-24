@@ -1,8 +1,13 @@
 "use client";
 
-import { StartConversationVisual } from "@/components/start-conversation/StartConversationVisual";
+import dynamic from "next/dynamic";
 import { StartConversationForm } from "@/components/start-conversation/StartConversationForm";
 import { Navbar } from "@/components/Navbar";
+
+const StartConversationVisual = dynamic(
+  () => import("@/components/start-conversation/StartConversationVisual").then((m) => ({ default: m.StartConversationVisual })),
+  { ssr: false, loading: () => <div className="w-full h-full min-h-[300px] animate-pulse bg-[#0a0e1a]/50" /> }
+);
 
 export default function StartConversationPage() {
   return (

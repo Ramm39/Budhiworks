@@ -112,47 +112,15 @@ h6 {
   font-family: var(--font-sora), sans-serif;
 }
 
-/* Optimize animations for smooth scrolling */
+/* Smooth scroll - only on html, avoid layout thrashing */
 @media (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: smooth;
   }
 }
 
-/* GPU acceleration for smooth scrolling - optimized */
-section {
-  will-change: scroll-position;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  perspective: 1000px;
-  contain: layout style paint;
-}
-
-/* Smooth scroll container */
 main {
-  will-change: scroll-position;
   -webkit-overflow-scrolling: touch;
-}
-
-/* Optimize motion components */
-[data-framer-component] {
-  will-change: transform, opacity;
-  transform: translateZ(0);
-  contain: layout style paint;
-}
-
-/* Reduce repaints during scroll */
-.motion-component {
-  contain: layout style paint;
-  will-change: transform, opacity;
-  transform: translateZ(0);
-}
-
-/* Smooth scroll performance */
-@media (prefers-reduced-motion: no-preference) {
-  * {
-    scroll-behavior: smooth;
-  }
 }
 
 @layer utilities {

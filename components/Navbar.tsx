@@ -27,8 +27,6 @@ function NavbarComponent() {
   const pathname = usePathname();
   const { scrollY } = useScroll();
 
-  // Transform scroll position to opacity and blur values (solid bar, minimal transparency)
-  const navbarOpacity = useTransform(scrollY, [0, 20], [0.94, 0.98]);
   const navbarBlur = useTransform(scrollY, [0, 20], [0, 20]);
   const navbarY = useTransform(scrollY, [0, 20], [0, -2]);
   const borderOpacity = useTransform(scrollY, [0, 20], [0.15, 0.25]);
@@ -47,19 +45,20 @@ function NavbarComponent() {
     []
   );
 
-  // Throttled scroll handler
-  const handleScroll = useCallback(
-    throttle(() => {
-      setScrolled(window.scrollY > 20);
-    }, 16), // ~60fps
-    []
+  const handleScroll = useCallback(() => {
+    setScrolled(window.scrollY > 20);
+  }, []);
+
+  const throttledScroll = useMemo(
+    () => throttle(handleScroll, 16),
+    [handleScroll]
   );
 
   useEffect(() => {
     setMounted(true);
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [handleScroll]);
+    window.addEventListener("scroll", throttledScroll, { passive: true });
+    return () => window.removeEventListener("scroll", throttledScroll);
+  }, [throttledScroll]);
 
   // Memoize isActive function
   const isActive = useCallback(

@@ -22,6 +22,9 @@ function HexagonalParticles({ count = 200 }: { count?: number }) {
     return temp;
   }, [count]);
 
+  const matrix = useMemo(() => new THREE.Matrix4(), []);
+  const scaleVector = useMemo(() => new THREE.Vector3(0.4, 0.4, 0.2), []);
+
   useFrame((state) => {
     if (!meshRef.current) return;
     const time = state.clock.getElapsedTime();
@@ -30,16 +33,13 @@ function HexagonalParticles({ count = 200 }: { count?: number }) {
       let { factor, speed, x, y, z } = particle;
       const t = (particle.time += speed);
 
-      // Different movement pattern - more geometric/orbital
       const nx = x + Math.cos(t * 0.8) * factor;
       const ny = y + Math.sin(t * 1.5) * factor;
       const nz = z + Math.cos(t * 1.2) * factor;
 
-      const matrix = new THREE.Matrix4();
-      matrix.setPosition(nx, ny, nz);
-      // Rotate hexagons
       matrix.makeRotationZ(time * 0.1 + i * 0.1);
-      matrix.scale(new THREE.Vector3(0.4, 0.4, 0.2));
+      matrix.setPosition(nx, ny, nz);
+      matrix.scale(scaleVector);
 
       meshRef.current!.setMatrixAt(i, matrix);
     });
@@ -269,7 +269,7 @@ function Scene3D() {
       <pointLight position={[-10, -10, -10]} intensity={0.4} color="#22D3EE" />
       <directionalLight position={[0, 10, 5]} intensity={0.35} color="#ffffff" />
 
-      <HexagonalParticles count={180} />
+      <HexagonalParticles count={120} />
       <GeometricGridTerrain />
       <OrbitalRings />
       <FloatingGeometricShapes />
@@ -298,15 +298,17 @@ export function ServicesHeroBackground() {
       <div className="absolute inset-0 opacity-65">
         <Canvas
           camera={{ position: [0, 0, 50], fov: 75 }}
-          gl={{ alpha: true, antialias: true }}
+          gl={{ alpha: true, antialias: false }}
+          dpr={[1, 2]}
+          performance={{ min: 0.5 }}
         >
           <Scene3D />
         </Canvas>
       </div>
 
-      {/* CSS Hexagonal Particle Layer */}
+      {/* CSS Hexagonal Particle Layer - reduced for performance */}
       <div className="absolute inset-0 overflow-hidden">
-        {Array.from({ length: 60 }).map((_, i) => (
+        {Array.from({ length: 30 }).map((_, i) => (
           <div
             key={i}
             className="absolute"
@@ -326,9 +328,9 @@ export function ServicesHeroBackground() {
         ))}
       </div>
 
-      {/* Geometric light specs */}
+      {/* Geometric light specs - reduced for performance */}
       <div className="absolute inset-0 overflow-hidden">
-        {Array.from({ length: 120 }).map((_, i) => (
+        {Array.from({ length: 60 }).map((_, i) => (
           <div
             key={i}
             className="absolute"

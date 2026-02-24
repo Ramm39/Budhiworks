@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect, useMemo } from "react";
+import { useRef, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import { motion } from "framer-motion";
@@ -22,9 +22,11 @@ function FloatingParticles({ count = 120 }: { count?: number }) {
     return temp;
   }, [count]);
 
+  const matrix = useMemo(() => new THREE.Matrix4(), []);
+  const scaleVector = useMemo(() => new THREE.Vector3(0.25, 0.25, 0.25), []);
+
   useFrame((state) => {
     if (!meshRef.current) return;
-    const time = state.clock.getElapsedTime();
 
     particles.forEach((particle, i) => {
       let { factor, speed, x, y, z } = particle;
@@ -34,9 +36,8 @@ function FloatingParticles({ count = 120 }: { count?: number }) {
       const ny = y + Math.sin(t * 2) * factor;
       const nz = z + Math.cos(t * 1.5) * factor;
 
-      const matrix = new THREE.Matrix4();
       matrix.setPosition(nx, ny, nz);
-      matrix.scale(new THREE.Vector3(0.25, 0.25, 0.25));
+      matrix.scale(scaleVector);
 
       meshRef.current!.setMatrixAt(i, matrix);
     });
@@ -179,7 +180,7 @@ function Scene3D() {
       <pointLight position={[-8, -8, -8]} intensity={0.25} color="#22D3EE" />
       <directionalLight position={[0, 8, 4]} intensity={0.25} color="#ffffff" />
 
-      <FloatingParticles count={120} />
+      <FloatingParticles count={80} />
       <AbstractWaves />
       <LightRays />
     </>
@@ -237,15 +238,17 @@ export function StartConversationVisual() {
       <div className="absolute inset-0 opacity-50">
         <Canvas
           camera={{ position: [0, 0, 45], fov: 70 }}
-          gl={{ alpha: true, antialias: true }}
+          gl={{ alpha: true, antialias: false }}
+          dpr={[1, 2]}
+          performance={{ min: 0.5 }}
         >
           <Scene3D />
         </Canvas>
       </div>
 
-      {/* CSS Particle Layer */}
+      {/* CSS Particle Layer - reduced for performance */}
       <div className="absolute inset-0 overflow-hidden">
-        {Array.from({ length: 40 }).map((_, i) => (
+        {Array.from({ length: 20 }).map((_, i) => (
           <motion.div
             key={i}
             className="absolute rounded-full"
@@ -272,9 +275,9 @@ export function StartConversationVisual() {
         ))}
       </div>
 
-      {/* Micro light specs */}
+      {/* Micro light specs - reduced for performance */}
       <div className="absolute inset-0 overflow-hidden">
-        {Array.from({ length: 80 }).map((_, i) => (
+        {Array.from({ length: 40 }).map((_, i) => (
           <motion.div
             key={i}
             className="absolute rounded-full"

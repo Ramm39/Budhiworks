@@ -142,7 +142,7 @@ export const projects: Project[] = [
     image: '/images/projects/gamezone-1.png',
     gallery: [
       '/images/projects/gamezone-1.png',
-      '/images/projects/gameozne-2.png',
+      '/images/projects/gamezone-2.png',
       '/images/projects/gamezone-3.png',
       '/images/projects/gamezone-4.png',
       '/images/projects/gamezone-5.png',
