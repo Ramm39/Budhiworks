@@ -60,7 +60,7 @@ export function WhyTrustUs() {
             </motion.div>
 
             {/* Large animated title */}
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 sm:mb-6 relative px-2">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4 sm:mb-6 relative px-2">
               <motion.span
                 initial={{ opacity: 0, x: -100 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -118,8 +118,8 @@ export function WhyTrustUs() {
                   {/* Animated background glow */}
                   <motion.div
                     className={`absolute inset-0 rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${feature.color === "accent-blue"
-                        ? "bg-gradient-to-br from-[#4F7DF3]/20 via-transparent to-transparent"
-                        : "bg-gradient-to-br from-[#22D3EE]/20 via-transparent to-transparent"
+                      ? "bg-gradient-to-br from-[#4F7DF3]/20 via-transparent to-transparent"
+                      : "bg-gradient-to-br from-[#22D3EE]/20 via-transparent to-transparent"
                       }`}
                     animate={{
                       backgroundPosition: ["0% 0%", "100% 100%"],
@@ -132,7 +132,7 @@ export function WhyTrustUs() {
                     {/* Title with animated underline */}
                     <div className="mb-4 sm:mb-6">
                       <motion.h3
-                        className="text-xl sm:text-2xl md:text-3xl font-semibold text-white mb-3 sm:mb-4 group-hover:text-[#22D3EE] transition-colors duration-300"
+                        className="text-lg sm:text-xl md:text-2xl font-semibold text-white mb-3 sm:mb-4 group-hover:text-[#22D3EE] transition-colors duration-300"
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
@@ -147,15 +147,15 @@ export function WhyTrustUs() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8, delay: index * 0.2 + 0.5 }}
                         className={`h-0.5 bg-gradient-to-r ${feature.color === "accent-blue"
-                            ? "from-[#4F7DF3]/80 via-[#4F7DF3]/40 to-transparent"
-                            : "from-[#22D3EE]/80 via-[#22D3EE]/40 to-transparent"
+                          ? "from-[#4F7DF3]/80 via-[#4F7DF3]/40 to-transparent"
+                          : "from-[#22D3EE]/80 via-[#22D3EE]/40 to-transparent"
                           } rounded-full`}
                       />
                     </div>
 
                     {/* Description */}
                     <motion.p
-                      className="text-base sm:text-lg md:text-xl text-gray-200 leading-relaxed"
+                      className="text-sm sm:text-base md:text-lg text-gray-200 leading-relaxed"
                       initial={{ opacity: 0 }}
                       whileInView={{ opacity: 1 }}
                       viewport={{ once: true }}

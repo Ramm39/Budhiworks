@@ -22,7 +22,7 @@ export function ContactIntro() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+          <p className="text-sm md:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
             This isn&apos;t a sales pitch. We&apos;re interested in understanding your situation, discussing possibilities, and exploring whether we can help. Whether you have a clear vision or just a challenge you&apos;re trying to solve, we&apos;d like to hear from you.
           </p>
         </motion.div>

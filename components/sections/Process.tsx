@@ -38,17 +38,17 @@ export function Process() {
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+            viewport={{ once: true, amount: 0.12, margin: "0px 0px -40px 0px" }}
+            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
             className="mb-8 sm:mb-10 md:mb-12 text-center"
           >
             {/* Large animated title */}
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 sm:mb-6 relative px-2">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4 sm:mb-6 relative px-2">
               <motion.span
                 initial={{ opacity: 0, x: -100 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.35, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
                 className="relative z-10 block mb-2"
               >
                 HOW WE
@@ -57,13 +57,13 @@ export function Process() {
                 initial={{ opacity: 0, x: 100 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.35, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
                 className="relative z-10 block bg-gradient-to-r from-[#4F7DF3] via-[#22D3EE] to-[#4F7DF3] bg-clip-text text-transparent"
               >
                 WORK
               </motion.span>
               {/* Animated glow */}
-              <motion.span 
+              <motion.span
                 className="absolute inset-0 bg-gradient-to-r from-[#4F7DF3]/40 via-[#22D3EE]/40 to-[#4F7DF3]/40 blur-3xl opacity-50 -z-0"
                 animate={{ opacity: [0.4, 0.5, 0.4] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
@@ -81,15 +81,15 @@ export function Process() {
               viewport={{ once: true }}
               transition={{ duration: 1.5, ease: "easeOut" }}
             />
-            
+
             {steps.map((step, index) => (
               <motion.div
                 key={step.number}
                 initial={{ opacity: 0, x: -80 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ 
-                  duration: 0.8, 
+                viewport={{ once: true, amount: 0.12 }}
+                transition={{
+                  duration: 0.8,
                   delay: index * 0.2,
                   ease: [0.22, 1, 0.36, 1]
                 }}
@@ -99,19 +99,19 @@ export function Process() {
                 <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6 md:gap-8">
                   {/* Animated timeline node */}
                   <div className="relative flex-shrink-0 w-full sm:w-auto flex sm:block items-center sm:items-start">
-                    <motion.div 
+                    <motion.div
                       className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full border-2 border-[#22D3EE]/30 bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:border-[#22D3EE] group-hover:bg-[#22D3EE]/10 transition-all duration-300 shadow-lg shadow-black/20"
                       whileHover={{ scale: 1.15 }}
                       transition={{ type: "spring", stiffness: 300 }}
                     >
-                      <motion.span 
+                      <motion.span
                         className="text-2xl sm:text-3xl"
-                        animate={{ 
+                        animate={{
                           rotate: [0, 10, -10, 0],
                           scale: [1, 1.1, 1]
                         }}
-                        transition={{ 
-                          duration: 3, 
+                        transition={{
+                          duration: 3,
                           repeat: Infinity,
                           delay: index * 0.5
                         }}
@@ -123,7 +123,7 @@ export function Process() {
                     {/* Animated pulse */}
                     <motion.div
                       className="absolute inset-0 rounded-full border-2 border-[#22D3EE] opacity-0 group-hover:opacity-50"
-                      animate={{ 
+                      animate={{
                         scale: [1, 1.5, 1],
                         opacity: [0, 0.5, 0]
                       }}
@@ -136,18 +136,18 @@ export function Process() {
                         initial={{ scaleY: 0 }}
                         whileInView={{ scaleY: 1 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: index * 0.2 + 0.4 }}
+                        transition={{ duration: 0.28, delay: index * 0.2 + 0.4 }}
                       />
                     )}
                   </div>
-                  
+
                   {/* Content card */}
-                  <motion.div 
+                  <motion.div
                     className="flex-1 w-full bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 hover:border-[#22D3EE]/40 hover:bg-white/8 transition-all duration-500 relative overflow-hidden"
                     whileHover={{ y: -5 }}
                   >
                     {/* Step number */}
-                    <motion.div 
+                    <motion.div
                       className="text-[10px] sm:text-xs text-[#22D3EE]/60 font-medium mb-3 sm:mb-4 tracking-wider"
                       initial={{ opacity: 0 }}
                       whileInView={{ opacity: 1 }}
@@ -156,10 +156,10 @@ export function Process() {
                     >
                       STEP {step.number}
                     </motion.div>
-                    
+
                     {/* Title */}
-                    <motion.h3 
-                      className="text-xl sm:text-2xl md:text-3xl font-semibold text-white mb-2 sm:mb-3 md:mb-4 group-hover:text-[#22D3EE] transition-colors duration-300"
+                    <motion.h3
+                      className="text-lg sm:text-xl md:text-2xl font-semibold text-white mb-2 sm:mb-3 md:mb-4 group-hover:text-[#22D3EE] transition-colors duration-300"
                       initial={{ opacity: 0 }}
                       whileInView={{ opacity: 1 }}
                       viewport={{ once: true }}
@@ -167,10 +167,10 @@ export function Process() {
                     >
                       {step.title}
                     </motion.h3>
-                    
+
                     {/* Description */}
-                    <motion.p 
-                      className="text-base sm:text-lg md:text-xl text-gray-200 leading-relaxed"
+                    <motion.p
+                      className="text-sm sm:text-base md:text-lg text-gray-200 leading-relaxed"
                       initial={{ opacity: 0 }}
                       whileInView={{ opacity: 1 }}
                       viewport={{ once: true }}
@@ -178,7 +178,7 @@ export function Process() {
                     >
                       {step.description}
                     </motion.p>
-                    
+
                     {/* Hover glow */}
                     <motion.div
                       className="absolute inset-0 bg-gradient-to-r from-[#4F7DF3]/5 via-[#22D3EE]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"

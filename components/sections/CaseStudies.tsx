@@ -17,8 +17,8 @@ function CaseStudiesComponent() {
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+            viewport={{ once: true, amount: 0.12, margin: "0px 0px -40px 0px" }}
+            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
             className="mb-8 sm:mb-10 md:mb-12 text-center"
           >
             {/* Subtle badge */}
@@ -26,7 +26,7 @@ function CaseStudiesComponent() {
               initial={{ scale: 0.8, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.3, delay: 0.2 }}
               className="mb-6 sm:mb-8"
             >
               <div className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-5 py-1.5 sm:py-2 bg-[#4F7DF3]/10 border border-[#4F7DF3]/20 rounded-full backdrop-blur-md">
@@ -45,12 +45,12 @@ function CaseStudiesComponent() {
             </motion.div>
 
             {/* Large animated title */}
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 sm:mb-6 relative px-2">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4 sm:mb-6 relative px-2">
               <motion.span
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.35, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
                 className="relative z-10 block mb-2"
               >
                 SELECTED
@@ -59,7 +59,7 @@ function CaseStudiesComponent() {
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.35, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
                 className="relative z-10 block bg-gradient-to-r from-[#4F7DF3] via-[#22D3EE] to-[#4F7DF3] bg-clip-text text-transparent"
               >
                 WORK
@@ -77,7 +77,7 @@ function CaseStudiesComponent() {
               initial={{ width: 0, opacity: 0 }}
               whileInView={{ width: "100%", opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 1.2, delay: 0.5 }}
+              transition={{ duration: 0.35, delay: 0.5 }}
               className="h-px bg-gradient-to-r from-transparent via-[#4F7DF3]/40 via-[#22D3EE]/40 to-transparent max-w-md mx-auto"
             />
           </motion.div>
@@ -89,7 +89,7 @@ function CaseStudiesComponent() {
                 key={project.slug}
                 initial={{ opacity: 0, y: 80, scale: 0.9 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                viewport={{ once: true, margin: "-50px" }}
+                viewport={{ once: true, amount: 0.12 }}
                 transition={{
                   duration: 0.8,
                   delay: index * 0.2,
@@ -161,7 +161,7 @@ function CaseStudiesComponent() {
 
                     {/* Title */}
                     <motion.h3
-                      className="text-xl sm:text-2xl md:text-3xl font-semibold mb-2 sm:mb-3 md:mb-4 text-white relative group-hover:text-[#22D3EE] transition-colors duration-300"
+                      className="text-lg sm:text-xl md:text-2xl font-semibold mb-2 sm:mb-3 md:mb-4 text-white relative group-hover:text-[#22D3EE] transition-colors duration-300"
                       initial={{ opacity: 0 }}
                       whileInView={{ opacity: 1 }}
                       viewport={{ once: true }}
@@ -172,7 +172,7 @@ function CaseStudiesComponent() {
 
                     {/* Description */}
                     <motion.p
-                      className="text-sm sm:text-base text-gray-200 leading-relaxed mb-4 sm:mb-6"
+                      className="text-xs sm:text-sm text-gray-200 leading-relaxed mb-4 sm:mb-6"
                       initial={{ opacity: 0 }}
                       whileInView={{ opacity: 1 }}
                       viewport={{ once: true }}
@@ -182,14 +182,14 @@ function CaseStudiesComponent() {
                     </motion.p>
 
                     {/* Links */}
-                    <motion.div
-                      className="flex flex-col sm:flex-row gap-4 sm:gap-6 pt-4 sm:pt-6 border-t border-white/10"
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.2 + 1 }}
-                    >
-                      {project.liveUrl && (
+                    {project.liveUrl && (
+                      <motion.div
+                        className="flex flex-col sm:flex-row gap-4 sm:gap-6 pt-4 sm:pt-6 border-t border-white/10"
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: index * 0.2 + 1 }}
+                      >
                         <motion.div whileHover={{ x: 5 }}>
                           <Link
                             href={project.liveUrl}
@@ -200,18 +200,8 @@ function CaseStudiesComponent() {
                             <span>→</span> View Live
                           </Link>
                         </motion.div>
-                      )}
-                      <motion.div whileHover={{ x: 5 }}>
-                        <Link
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-sm text-[#22D3EE] hover:text-white hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)] transition-all flex items-center gap-2 font-medium touch-manipulation"
-                        >
-                          <span>→</span> View Code
-                        </Link>
                       </motion.div>
-                    </motion.div>
+                    )}
                   </div>
                 </div>
               </motion.div>

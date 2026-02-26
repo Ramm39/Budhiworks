@@ -38,17 +38,17 @@ export function HowWeHelp() {
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+            viewport={{ once: true, amount: 0.12, margin: "0px 0px -40px 0px" }}
+            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
             className="mb-8 sm:mb-10 md:mb-12 text-center"
           >
             {/* Large animated title */}
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-4 sm:mb-6 relative px-2">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight mb-4 sm:mb-6 relative px-2">
               <motion.span
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.35, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
                 className="block mb-2"
               >
                 HOW WE HELP
@@ -57,7 +57,7 @@ export function HowWeHelp() {
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.35, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
                 className="block bg-gradient-to-r from-[#4F7DF3] via-[#22D3EE] to-[#4F7DF3] bg-clip-text text-transparent"
               >
                 BUSINESSES MOVE
@@ -66,25 +66,25 @@ export function HowWeHelp() {
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.35, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
                 className="block text-[#22D3EE]"
               >
                 FORWARD
               </motion.span>
               {/* Animated glow */}
-              <motion.span 
+              <motion.span
                 className="absolute inset-0 bg-gradient-to-r from-[#4F7DF3]/40 via-[#22D3EE]/40 to-[#4F7DF3]/40 blur-3xl opacity-40 -z-0"
                 animate={{ opacity: [0.3, 0.4, 0.3] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               />
             </h2>
-            
+
             {/* Animated separator */}
             <motion.div
               initial={{ width: 0, opacity: 0 }}
               whileInView={{ width: "100%", opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 1.2, delay: 0.5 }}
+              transition={{ duration: 0.35, delay: 0.5 }}
               className="h-px bg-gradient-to-r from-transparent via-[#4F7DF3]/40 via-[#22D3EE]/40 to-transparent max-w-2xl mx-auto"
             />
           </motion.div>
@@ -96,9 +96,9 @@ export function HowWeHelp() {
                 key={item.title}
                 initial={{ opacity: 0, scale: 0.8, y: 60 }}
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ 
-                  duration: 0.8, 
+                viewport={{ once: true, amount: 0.12 }}
+                transition={{
+                  duration: 0.8,
                   delay: index * 0.15,
                   ease: [0.22, 1, 0.36, 1]
                 }}
@@ -108,14 +108,14 @@ export function HowWeHelp() {
                 {/* Floating card */}
                 <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 hover:border-[#22D3EE]/40 hover:bg-white/8 transition-all duration-500 relative overflow-hidden w-full h-full flex flex-col">
                   {/* Animated icon */}
-                  <motion.div 
+                  <motion.div
                     className="text-2xl sm:text-3xl mb-4 sm:mb-6 opacity-80 group-hover:opacity-100"
-                    animate={{ 
+                    animate={{
                       rotate: [0, 5, -5, 0],
                       scale: [1, 1.1, 1]
                     }}
-                    transition={{ 
-                      duration: 3, 
+                    transition={{
+                      duration: 3,
                       repeat: Infinity,
                       delay: index * 0.3
                     }}
@@ -123,15 +123,15 @@ export function HowWeHelp() {
                   >
                     {item.icon}
                   </motion.div>
-                  
+
                   {/* Animated metric */}
                   <div className="mb-4 sm:mb-6">
-                    <motion.div 
-                      className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#22D3EE] mb-1 sm:mb-2"
+                    <motion.div
+                      className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#22D3EE] mb-1 sm:mb-2"
                       initial={{ opacity: 0, scale: 0.5 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true }}
-                      transition={{ 
+                      transition={{
                         delay: index * 0.2 + 0.4,
                         type: "spring",
                         stiffness: 200
@@ -144,7 +144,7 @@ export function HowWeHelp() {
                       {item.label}
                     </div>
                   </div>
-                  
+
                   {/* Animated progress bar */}
                   <div className="h-1.5 sm:h-2 bg-white/5 rounded-full mb-4 sm:mb-6 overflow-hidden">
                     <motion.div
@@ -162,10 +162,10 @@ export function HowWeHelp() {
                       />
                     </motion.div>
                   </div>
-                  
+
                   {/* Title */}
-                  <motion.h3 
-                    className="text-sm sm:text-base md:text-lg font-medium text-white group-hover:text-[#22D3EE] transition-colors duration-300 mt-auto"
+                  <motion.h3
+                    className="text-xs sm:text-sm md:text-base font-medium text-white group-hover:text-[#22D3EE] transition-colors duration-300 mt-auto"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
@@ -173,7 +173,7 @@ export function HowWeHelp() {
                   >
                     {item.title}
                   </motion.h3>
-                  
+
                   {/* Hover glow */}
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-br from-[#22D3EE]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"

@@ -24,7 +24,7 @@ export function MoreWork() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-2xl md:text-3xl font-bold mb-12 text-gray-900 dark:text-white leading-tight"
+          className="text-xl md:text-2xl font-bold mb-12 text-gray-900 dark:text-white leading-tight"
         >
           More Work & Projects
         </motion.h2>
@@ -56,7 +56,7 @@ export function MoreWork() {
                     blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
                   />
                 </div>
-                <h3 className="text-lg md:text-xl font-semibold text-gray-900 dark:text-white mb-3 leading-tight">
+                <h3 className="text-base md:text-lg font-semibold text-gray-900 dark:text-white mb-3 leading-tight">
                   {project.title}
                 </h3>
                 <p className="text-base text-gray-700 dark:text-gray-300 leading-relaxed mb-4 flex-grow">

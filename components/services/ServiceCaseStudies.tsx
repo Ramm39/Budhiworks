@@ -79,7 +79,7 @@ export function ServiceCaseStudies({ caseStudies }: ServiceCaseStudiesProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-2xl md:text-3xl font-bold mb-12 text-gray-900 dark:text-white text-center leading-tight"
+          className="text-xl md:text-2xl font-bold mb-12 text-gray-900 dark:text-white text-center leading-tight"
         >
           Case Studies
         </motion.h2>
@@ -91,7 +91,7 @@ export function ServiceCaseStudies({ caseStudies }: ServiceCaseStudiesProps) {
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
+              transition={{ duration: 0.28, delay: index * 0.15 }}
               whileHover={{ 
                 rotateX: 2,
                 rotateY: -2,
@@ -106,7 +106,7 @@ export function ServiceCaseStudies({ caseStudies }: ServiceCaseStudiesProps) {
                   <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-br from-accent-blue/20 via-accent-cyan/15 to-transparent blur-xl" />
                 </div>
 
-                <h3 className="text-xl md:text-2xl font-bold mb-6 text-gray-900 dark:text-white relative z-10 leading-tight">
+                <h3 className="text-lg md:text-xl font-bold mb-6 text-gray-900 dark:text-white relative z-10 leading-tight">
                   {project.title}
                 </h3>
                 <div className="space-y-5 relative z-10">

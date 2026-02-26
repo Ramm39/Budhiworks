@@ -82,7 +82,7 @@ export function SolutionsCTA() {
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: 0.28, delay: 0.2 }}
               className="mb-8"
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#22D3EE]/20 border border-[#22D3EE]/30 rounded-full mb-6 backdrop-blur-md">
@@ -91,24 +91,24 @@ export function SolutionsCTA() {
               </div>
             </motion.div>
 
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-balance leading-tight text-white">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-balance leading-tight text-white">
               Let&apos;s build the right{" "}
               <span className="bg-gradient-to-r from-[#4F7DF3] via-[#22D3EE] to-[#4F7DF3] bg-clip-text text-transparent">
                 solution
               </span>{" "}
               for your business
             </h2>
-            
-            <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto text-balance leading-relaxed">
+
+            <p className="text-sm md:text-base text-gray-300 mb-10 max-w-2xl mx-auto text-balance leading-relaxed">
               Tell us about your challenge or opportunity—we&apos;ll help you figure out the best approach.
             </p>
-            
+
             {/* CTA Button */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              transition={{ duration: 0.28, delay: 0.4 }}
             >
               <CTAButton href="/start-conversation" />
             </motion.div>

@@ -44,11 +44,11 @@ export function ProblemsWeSolve() {
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 1, ease: easeSmooth }}
+          viewport={{ once: true, amount: 0.12 }}
+          transition={{ duration: 0.35, ease: easeSmooth }}
           className="mb-16 text-center"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
             Challenges We{" "}
             <span className="bg-gradient-to-r from-[#4F7DF3] via-[#22D3EE] to-[#4F7DF3] bg-clip-text text-transparent">
               Tackle
@@ -67,8 +67,8 @@ export function ProblemsWeSolve() {
                 key={index}
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true, amount: 0.12 }}
+                transition={{ duration: 0.28, delay: index * 0.1 }}
                 className="relative pl-20 md:pl-28"
               >
                 {/* Timeline dot */}
@@ -84,7 +84,7 @@ export function ProblemsWeSolve() {
                 <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl p-6 hover:border-[#22D3EE]/40 hover:bg-white/[0.08] transition-all duration-300">
                   <div className="flex items-start gap-4">
                     <div className="text-3xl flex-shrink-0">{item.icon}</div>
-                    <p className="text-base md:text-lg text-gray-200 leading-relaxed flex-1">
+                    <p className="text-sm md:text-base text-gray-200 leading-relaxed flex-1">
                       {item.problem}
                     </p>
                   </div>

@@ -336,11 +336,11 @@ export function StartConversationVisual() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
+          transition={{ duration: 0.35, ease: "easeOut" }}
           className="text-center mb-8 md:mb-12"
         >
           <motion.h1
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4"
+            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 sm:mb-4"
             style={{
               textShadow: "0 0 30px rgba(79, 125, 243, 0.5), 0 0 60px rgba(34, 211, 238, 0.3)",
             }}
@@ -360,10 +360,10 @@ export function StartConversationVisual() {
             Let&apos;s Build Together
           </motion.h1>
           <motion.p
-            className="text-base sm:text-lg md:text-xl text-gray-300/80 mt-2 sm:mt-4"
+            className="text-sm sm:text-base md:text-lg text-gray-300/80 mt-2 sm:mt-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.3 }}
+            transition={{ duration: 0.35, delay: 0.3 }}
           >
             Transform your vision into reality
           </motion.p>
@@ -380,7 +380,7 @@ export function StartConversationVisual() {
               key={index}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
+              transition={{ duration: 0.28, delay: 0.5 + index * 0.1 }}
               className="relative backdrop-blur-md bg-white/5 border border-white/10 rounded-xl p-4 md:p-5 hover:bg-white/10 transition-all duration-300 group"
             >
               {/* Glow effect on hover */}
@@ -397,7 +397,7 @@ export function StartConversationVisual() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
+          transition={{ duration: 0.3, delay: 0.8 }}
           className="flex flex-wrap justify-center gap-6 md:gap-8 mt-6 md:mt-8"
         >
           {[
@@ -407,7 +407,7 @@ export function StartConversationVisual() {
           ].map((stat, index) => (
             <div key={index} className="text-center">
               <motion.div
-                className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#4F7DF3] to-[#22D3EE] mb-1"
+                className="text-xl md:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#4F7DF3] to-[#22D3EE] mb-1"
                 animate={{
                   backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
                 }}

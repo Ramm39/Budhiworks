@@ -42,11 +42,11 @@ export function SolutionImpact() {
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 1, ease: easeSmooth }}
+          viewport={{ once: true, amount: 0.12 }}
+          transition={{ duration: 0.35, ease: easeSmooth }}
           className="mb-16 text-center"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
             Real{" "}
             <span className="bg-gradient-to-r from-[#4F7DF3] via-[#22D3EE] to-[#4F7DF3] bg-clip-text text-transparent">
               Results
@@ -61,8 +61,8 @@ export function SolutionImpact() {
               key={index}
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
+              viewport={{ once: true, amount: 0.12 }}
+              transition={{ duration: 0.28, delay: index * 0.15 }}
               whileHover={{ scale: 1.05 }}
               className="group relative"
             >
@@ -73,7 +73,7 @@ export function SolutionImpact() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: index * 0.2 }}
+                    transition={{ duration: 0.3, delay: index * 0.2 }}
                     className={`text-6xl md:text-7xl font-bold bg-gradient-to-r ${impact.gradient} bg-clip-text text-transparent mb-2`}
                   >
                     {impact.stat}
@@ -83,7 +83,7 @@ export function SolutionImpact() {
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: index * 0.25 }}
+                    transition={{ duration: 0.28, delay: index * 0.25 }}
                     className="text-sm text-gray-400 mb-6"
                   >
                     {impact.statLabel}
@@ -91,10 +91,10 @@ export function SolutionImpact() {
 
                   {/* Keyword and Statement */}
                   <div className="space-y-2">
-                    <h3 className={`text-2xl md:text-3xl font-bold bg-gradient-to-r ${impact.gradient} bg-clip-text text-transparent`}>
+                    <h3 className={`text-xl md:text-2xl font-bold bg-gradient-to-r ${impact.gradient} bg-clip-text text-transparent`}>
                       {impact.keyword}
                     </h3>
-                    <p className="text-base md:text-lg text-gray-300 leading-relaxed">
+                    <p className="text-sm md:text-base text-gray-300 leading-relaxed">
                       {impact.statement}
                     </p>
                   </div>
@@ -105,7 +105,7 @@ export function SolutionImpact() {
                     initial={{ width: 0 }}
                     whileInView={{ width: "100%" }}
                     viewport={{ once: true }}
-                    transition={{ duration: 1, delay: index * 0.3 }}
+                    transition={{ duration: 0.35, delay: index * 0.3 }}
                   />
                 </div>
 

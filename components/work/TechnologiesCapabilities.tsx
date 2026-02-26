@@ -43,7 +43,7 @@ export function TechnologiesCapabilities() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-3xl md:text-4xl font-bold mb-16 text-gray-900 dark:text-white text-center leading-tight"
+          className="text-2xl md:text-3xl font-bold mb-16 text-gray-900 dark:text-white text-center leading-tight"
         >
           Technologies & Capabilities
         </motion.h2>
@@ -55,11 +55,11 @@ export function TechnologiesCapabilities() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.28, delay: index * 0.1 }}
               className="relative"
             >
               <div className="h-full p-6 rounded-2xl bg-gray-50 dark:bg-[#0A0E17] border border-gray-200/30 dark:border-gray-800/20">
-                <h3 className="text-lg md:text-xl font-semibold text-gray-900 dark:text-white mb-4 leading-tight">
+                <h3 className="text-base md:text-lg font-semibold text-gray-900 dark:text-white mb-4 leading-tight">
                   {category.category}
                 </h3>
                 <div className="flex flex-wrap gap-2">

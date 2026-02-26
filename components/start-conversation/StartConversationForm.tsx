@@ -70,7 +70,7 @@ export function StartConversationForm() {
       <motion.div
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
         className="w-full max-w-4xl relative z-10 my-auto overflow-x-hidden"
       >
         {/* Glass panel container */}
@@ -88,7 +88,7 @@ export function StartConversationForm() {
             transition={{ delay: 0.2 }}
           >
             <div className="mb-6 sm:mb-8">
-              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">Start a Conversation</h2>
+              <h2 className="text-xl sm:text-2xl font-bold text-white mb-2">Start a Conversation</h2>
               <p className="text-gray-400 text-xs sm:text-sm">Tell us about your project</p>
             </div>
 

@@ -71,7 +71,7 @@ export function ProcessHighlight() {
                 <div className="text-3xl md:text-4xl font-bold text-accent-blue dark:text-accent-cyan font-mono mb-3">
                   {step.number}
                 </div>
-                <h3 className="text-lg md:text-xl font-semibold text-gray-900 dark:text-white mb-2 leading-tight">
+                <h3 className="text-base md:text-lg font-semibold text-gray-900 dark:text-white mb-2 leading-tight">
                   {step.title}
                 </h3>
                 <p className="text-sm md:text-base text-gray-600 dark:text-gray-400 leading-relaxed">

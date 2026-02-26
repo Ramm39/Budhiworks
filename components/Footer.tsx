@@ -42,17 +42,17 @@ function FooterComponent({ transparent }: { transparent?: boolean }) {
                 quality={85}
               />
             </Link>
-            <p className={`text-sm mb-2 ${transparent ? "text-gray-300" : "text-gray-600 dark:text-gray-400"}`}>
+            <p className={`text-xs mb-2 ${transparent ? "text-gray-300" : "text-gray-600 dark:text-gray-400"}`}>
               Custom software and digital solutions
             </p>
-            <p className={`text-sm ${transparent ? "text-gray-300" : "text-gray-600 dark:text-gray-400"}`}>
+            <p className={`text-xs ${transparent ? "text-gray-300" : "text-gray-600 dark:text-gray-400"}`}>
               built around your business.
             </p>
           </div>
 
           {/* Services */}
           <div>
-            <h4 className={`text-sm font-semibold mb-4 uppercase tracking-wider ${transparent ? "text-white" : "text-gray-900 dark:text-white"}`}>
+            <h4 className={`text-xs font-semibold mb-4 uppercase tracking-wider ${transparent ? "text-white" : "text-gray-900 dark:text-white"}`}>
               Services
             </h4>
             <ul className="space-y-2">
@@ -60,7 +60,7 @@ function FooterComponent({ transparent }: { transparent?: boolean }) {
                 <li key={service}>
                   <a
                     href="#services"
-                    className={`text-sm transition-colors hover:text-accent-blue dark:hover:text-accent-cyan ${transparent ? "text-gray-300 hover:text-accent-cyan" : "text-gray-600 dark:text-gray-400"}`}
+                    className={`text-xs transition-colors hover:text-accent-blue dark:hover:text-accent-cyan ${transparent ? "text-gray-300 hover:text-accent-cyan" : "text-gray-600 dark:text-gray-400"}`}
                   >
                     {service}
                   </a>
@@ -71,7 +71,7 @@ function FooterComponent({ transparent }: { transparent?: boolean }) {
 
           {/* Solutions */}
           <div>
-            <h4 className={`text-sm font-semibold mb-4 uppercase tracking-wider ${transparent ? "text-white" : "text-gray-900 dark:text-white"}`}>
+            <h4 className={`text-xs font-semibold mb-4 uppercase tracking-wider ${transparent ? "text-white" : "text-gray-900 dark:text-white"}`}>
               Solutions
             </h4>
             <ul className="space-y-2">
@@ -79,7 +79,7 @@ function FooterComponent({ transparent }: { transparent?: boolean }) {
                 <li key={solution}>
                   <a
                     href="#solutions"
-                    className={`text-sm transition-colors hover:text-accent-blue dark:hover:text-accent-cyan ${transparent ? "text-gray-300 hover:text-accent-cyan" : "text-gray-600 dark:text-gray-400"}`}
+                    className={`text-xs transition-colors hover:text-accent-blue dark:hover:text-accent-cyan ${transparent ? "text-gray-300 hover:text-accent-cyan" : "text-gray-600 dark:text-gray-400"}`}
                   >
                     {solution}
                   </a>
@@ -90,10 +90,10 @@ function FooterComponent({ transparent }: { transparent?: boolean }) {
 
           {/* Contact */}
           <div>
-            <h4 className={`text-sm font-semibold mb-4 uppercase tracking-wider ${transparent ? "text-white" : "text-gray-900 dark:text-white"}`}>
+            <h4 className={`text-xs font-semibold mb-4 uppercase tracking-wider ${transparent ? "text-white" : "text-gray-900 dark:text-white"}`}>
               Contact
             </h4>
-            <ul className={`space-y-2 text-sm transition-colors ${transparent ? "text-gray-300" : "text-gray-600 dark:text-gray-400"}`}>
+            <ul className={`space-y-2 text-xs transition-colors ${transparent ? "text-gray-300" : "text-gray-600 dark:text-gray-400"}`}>
               <li>
                 <a
                   href="mailto:buddhiworks@gmail.com"
@@ -130,19 +130,19 @@ function FooterComponent({ transparent }: { transparent?: boolean }) {
               : "border-t dark:border-dark-border border-gray-200/50 pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4"
           }
         >
-          <p className={`text-xs sm:text-sm text-center sm:text-left ${transparent ? "text-gray-400" : "text-gray-500 dark:text-gray-500"}`}>
+          <p className={`text-[10px] sm:text-xs text-center sm:text-left ${transparent ? "text-gray-400" : "text-gray-500 dark:text-gray-500"}`}>
             © {new Date().getFullYear()} Buddhiworks. All rights reserved.
           </p>
           <div className="flex gap-4 sm:gap-6">
             <a
               href="#"
-              className={`text-xs sm:text-sm transition-colors hover:text-accent-cyan touch-manipulation ${transparent ? "text-gray-400 hover:text-accent-cyan" : "text-gray-500 dark:text-gray-500 hover:text-accent-blue dark:hover:text-accent-cyan"}`}
+              className={`text-[10px] sm:text-xs transition-colors hover:text-accent-cyan touch-manipulation ${transparent ? "text-gray-400 hover:text-accent-cyan" : "text-gray-500 dark:text-gray-500 hover:text-accent-blue dark:hover:text-accent-cyan"}`}
             >
               Privacy Policy
             </a>
             <a
               href="#"
-              className={`text-xs sm:text-sm transition-colors hover:text-accent-cyan touch-manipulation ${transparent ? "text-gray-400 hover:text-accent-cyan" : "text-gray-500 dark:text-gray-500 hover:text-accent-blue dark:hover:text-accent-cyan"}`}
+              className={`text-[10px] sm:text-xs transition-colors hover:text-accent-cyan touch-manipulation ${transparent ? "text-gray-400 hover:text-accent-cyan" : "text-gray-500 dark:text-gray-500 hover:text-accent-blue dark:hover:text-accent-cyan"}`}
             >
               Terms
             </a>

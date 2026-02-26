@@ -58,7 +58,7 @@ export function ServiceIncludes({ items }: ServiceIncludesProps) {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-2xl md:text-3xl font-bold mb-12 text-gray-900 dark:text-white text-center leading-tight">
+          <h2 className="text-xl md:text-2xl font-bold mb-12 text-gray-900 dark:text-white text-center leading-tight">
             What This Service Includes
           </h2>
           <ul className="space-y-5">
@@ -68,11 +68,11 @@ export function ServiceIncludes({ items }: ServiceIncludesProps) {
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ duration: 0.28, delay: index * 0.1 }}
                 className="flex items-start gap-4"
               >
                 <div className="flex-shrink-0 w-2 h-2 rounded-full bg-accent-blue dark:bg-accent-cyan mt-2.5" />
-                <span className="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                <span className="text-sm md:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
                   {item}
                 </span>
               </motion.li>

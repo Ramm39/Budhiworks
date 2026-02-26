@@ -78,7 +78,7 @@ export function ServiceBenefits({ benefits }: ServiceBenefitsProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-2xl md:text-3xl font-bold mb-12 text-gray-900 dark:text-white text-center leading-tight"
+          className="text-xl md:text-2xl font-bold mb-12 text-gray-900 dark:text-white text-center leading-tight"
         >
           Benefits
         </motion.h2>
@@ -90,7 +90,7 @@ export function ServiceBenefits({ benefits }: ServiceBenefitsProps) {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.28, delay: index * 0.1 }}
             >
               <motion.div
                 whileHover={{ 
@@ -102,10 +102,10 @@ export function ServiceBenefits({ benefits }: ServiceBenefitsProps) {
                 style={{ transformStyle: "preserve-3d", perspective: "1000px" }}
               >
                 <StaticTile className="p-8 md:p-10 h-full group">
-                  <h3 className="text-xl md:text-2xl font-bold mb-4 text-gray-900 dark:text-white leading-tight">
+                  <h3 className="text-lg md:text-xl font-bold mb-4 text-gray-900 dark:text-white leading-tight">
                     {benefit.title}
                   </h3>
-                  <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                  <p className="text-sm md:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
                     {benefit.description}
                   </p>
                   {/* Enhanced glow on hover */}

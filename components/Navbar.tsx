@@ -32,7 +32,7 @@ function NavbarComponent() {
   const borderOpacity = useTransform(scrollY, [0, 20], [0.15, 0.25]);
 
   // Memoize nav items
-  const navItems = useMemo(() => ["Services", "Solutions", "Work", "Company"], []);
+  const navItems = useMemo(() => ["Services", "Solutions", "Work", "Company", "Blog"], []);
 
   // Memoize particle shimmer positions - reduced to 2 for performance (Lighthouse CPU idle)
   const particlePositions = useMemo(
@@ -199,7 +199,7 @@ function NavbarComponent() {
                     />
                   </motion.div>
                   <motion.span
-                    className="ml-1 sm:ml-1.5 md:ml-2 text-sm sm:text-base md:text-lg lg:text-xl font-light text-gray-900 dark:text-white tracking-tight hidden sm:inline-block"
+                    className="ml-1 sm:ml-1.5 md:ml-2 text-xs sm:text-sm md:text-base lg:text-lg font-light text-gray-900 dark:text-white tracking-tight hidden sm:inline-block"
                     variants={{
                       rest: {
                         opacity: 0,
@@ -228,8 +228,9 @@ function NavbarComponent() {
                   : item === "Solutions" ? "/solutions"
                     : item === "Work" ? "/work"
                       : item === "Company" ? "/company"
-                        : `#${item.toLowerCase()}`;
-                const Component = (item === "Services" || item === "Solutions" || item === "Work" || item === "Company")
+                        : item === "Blog" ? "/blog"
+                          : `#${item.toLowerCase()}`;
+                const Component = (item === "Services" || item === "Solutions" || item === "Work" || item === "Company" || item === "Blog")
                   ? Link
                   : "a";
                 const active = isActive(item);
@@ -250,7 +251,7 @@ function NavbarComponent() {
                       className="relative group block py-1.5 px-3 rounded-lg outline-none focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/50 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-[#0b0f19] transition-colors duration-200 hover:bg-white/5 dark:hover:bg-white/5"
                     >
                       <motion.span
-                        className={`inline-block text-sm lg:text-base font-medium tracking-wider transition-all duration-300 ${active
+                        className={`inline-block text-xs lg:text-sm font-medium tracking-wider transition-all duration-300 ${active
                           ? "text-accent-blue dark:text-accent-cyan active-nav-glow"
                           : "text-gray-600 dark:text-gray-400"
                           }`}
@@ -265,9 +266,8 @@ function NavbarComponent() {
 
                       {/* Animated underline - horizontal line only, rounded */}
                       <span
-                        className={`absolute bottom-0.5 left-2 right-2 block h-0.5 rounded-full origin-center transition-all duration-300 ${
-                          active ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"
-                        } group-hover:opacity-100 group-hover:scale-x-100`}
+                        className={`absolute bottom-0.5 left-2 right-2 block h-0.5 rounded-full origin-center transition-all duration-300 ${active ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"
+                          } group-hover:opacity-100 group-hover:scale-x-100`}
                         style={{
                           background: theme === "dark" ? "rgba(79, 125, 243, 0.9)" : "rgba(79, 125, 243, 0.7)",
                         }}
@@ -305,7 +305,7 @@ function NavbarComponent() {
                   >
                     <Link
                       href="/start-conversation"
-                      className="nav-cta-link relative block px-3 md:px-4 lg:px-6 py-1.5 md:py-2 lg:py-2.5 text-sm md:text-base font-medium tracking-wide text-gray-900 dark:text-white whitespace-nowrap rounded-full no-underline border-0 ring-0 focus:ring-0 focus:border-0 pointer-events-auto transition-transform duration-300 group-hover:scale-105"
+                      className="nav-cta-link relative block px-3 md:px-4 lg:px-6 py-1.5 md:py-2 lg:py-2.5 text-xs md:text-sm font-medium tracking-wide text-gray-900 dark:text-white whitespace-nowrap rounded-full no-underline border-0 ring-0 focus:ring-0 focus:border-0 pointer-events-auto transition-transform duration-300 group-hover:scale-105"
                       style={{ outline: "none", boxShadow: "none" }}
                     >
                       Start a Conversation
@@ -354,8 +354,9 @@ function NavbarComponent() {
                   : item === "Solutions" ? "/solutions"
                     : item === "Work" ? "/work"
                       : item === "Company" ? "/company"
-                        : `#${item.toLowerCase()}`;
-                const Component = (item === "Services" || item === "Solutions" || item === "Work" || item === "Company")
+                        : item === "Blog" ? "/blog"
+                          : `#${item.toLowerCase()}`;
+                const Component = (item === "Services" || item === "Solutions" || item === "Work" || item === "Company" || item === "Blog")
                   ? Link
                   : "a";
                 const active = isActive(item);
@@ -365,7 +366,7 @@ function NavbarComponent() {
                     key={item}
                     href={href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`text-base font-medium tracking-wide py-3 px-4 rounded-lg outline-none focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/50 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-[#0b0f19] transition-colors duration-200 hover:bg-white/5 dark:hover:bg-white/5 touch-manipulation w-full max-w-full overflow-x-hidden whitespace-nowrap ${active
+                    className={`text-sm font-medium tracking-wide py-3 px-4 rounded-lg outline-none focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/50 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-[#0b0f19] transition-colors duration-200 hover:bg-white/5 dark:hover:bg-white/5 touch-manipulation w-full max-w-full overflow-x-hidden whitespace-nowrap ${active
                       ? "text-accent-blue dark:text-accent-cyan"
                       : "text-gray-600 dark:text-gray-400"
                       }`}
@@ -401,7 +402,7 @@ function NavbarComponent() {
                     <Link
                       href="/start-conversation"
                       onClick={() => setMobileMenuOpen(false)}
-                      className="nav-cta-link block px-4 sm:px-6 py-3 text-sm font-light tracking-wide text-gray-900 dark:text-white text-center touch-manipulation w-full overflow-x-hidden whitespace-nowrap no-underline border-0 ring-0 transition-transform duration-300 group-hover:scale-105 group-active:scale-105"
+                      className="nav-cta-link block px-4 sm:px-6 py-3 text-xs font-light tracking-wide text-gray-900 dark:text-white text-center touch-manipulation w-full overflow-x-hidden whitespace-nowrap no-underline border-0 ring-0 transition-transform duration-300 group-hover:scale-105 group-active:scale-105"
                       style={{
                         maxWidth: '100%',
                         overflow: 'hidden',

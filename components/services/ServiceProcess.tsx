@@ -78,7 +78,7 @@ export function ServiceProcess({ steps }: ServiceProcessProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-2xl md:text-3xl font-bold mb-12 text-gray-900 dark:text-white text-center leading-tight"
+          className="text-xl md:text-2xl font-bold mb-12 text-gray-900 dark:text-white text-center leading-tight"
         >
           Our Process
         </motion.h2>
@@ -118,7 +118,7 @@ export function ServiceProcess({ steps }: ServiceProcessProps) {
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
+              transition={{ duration: 0.28, delay: index * 0.15 }}
               className="relative py-8 md:py-10 border-b border-gray-200/50 dark:border-gray-800/30 last:border-0"
             >
               <div className="flex items-start gap-8">
@@ -144,10 +144,10 @@ export function ServiceProcess({ steps }: ServiceProcessProps) {
                   </motion.div>
                 </div>
                 <div className="flex-1 pt-1">
-                  <h3 className="text-xl md:text-2xl font-semibold text-gray-900 dark:text-white mb-3 leading-tight">
+                  <h3 className="text-lg md:text-xl font-semibold text-gray-900 dark:text-white mb-3 leading-tight">
                     {step.title}
                   </h3>
-                  <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                  <p className="text-sm md:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
                     {step.description}
                   </p>
                 </div>

@@ -35,15 +35,15 @@ export function ContactHero() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
         >
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-balance leading-tight tracking-tight">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-balance leading-tight tracking-tight">
             Start a{" "}
             <span className="bg-gradient-to-r from-accent-blue to-accent-cyan bg-clip-text text-transparent">
               Conversation
             </span>
           </h1>
-          <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto text-balance leading-relaxed">
+          <p className="text-sm md:text-base text-gray-700 dark:text-gray-300 max-w-3xl mx-auto text-balance leading-relaxed">
             Share your ideas, challenges, or questions. We&apos;re here to listen and help figure out the best path forward.
           </p>
         </motion.div>

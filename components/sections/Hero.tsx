@@ -58,10 +58,10 @@ function HeroComponent() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
             className="space-y-3 sm:space-y-4 md:space-y-6"
           >
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-balance leading-tight text-white drop-shadow-2xl px-2">
+            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-balance leading-tight text-white drop-shadow-2xl px-2">
               Custom Software &{" "}
               <span className="bg-gradient-to-r from-accent-blue to-accent-cyan bg-clip-text text-transparent relative inline-block">
                 Digital Solutions
@@ -75,10 +75,10 @@ function HeroComponent() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            transition={{ duration: 0.3, delay: 0.2, ease: "easeOut" }}
             className="max-w-3xl px-4"
           >
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 dark:text-gray-100 text-balance leading-relaxed font-light drop-shadow-lg">
+            <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-200 dark:text-gray-100 text-balance leading-relaxed font-light drop-shadow-lg">
               We design and build custom software, websites, and applications that help businesses operate better, scale confidently, and stay future-ready.
             </p>
           </motion.div>
@@ -87,7 +87,7 @@ function HeroComponent() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+            transition={{ duration: 0.3, delay: 0.4, ease: "easeOut" }}
             className="pt-6 sm:pt-8 md:pt-12 w-full px-2"
           >
             <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 max-w-4xl mx-auto">

@@ -1,0 +1,46 @@
+[
+  {
+    "id": "building-software-that-lasts-1",
+    "slug": "building-software-that-lasts",
+    "title": "Building Software That Lasts",
+    "excerpt": "Why we focus on maintainability, clear architecture, and long-term value instead of quick fixes and short-lived solutions.",
+    "content": "At Buddhiworks, we believe the best software is built to evolve.\n\nThat means choosing technologies and patterns that your team can maintain for years. It means writing code that reads like documentation, and designing systems that can scale without a full rewrite.\n\nWe’ve seen too many projects that delivered fast but became expensive to change. Our approach is different: we invest in a solid foundation so that every new feature is easier, not harder, to add.\n\nIf you’re planning a new product or modernizing an existing one, we’d love to help you build something that lasts.",
+    "author": "Buddhiworks",
+    "publishedAt": "2025-02-20T10:00:00.000Z",
+    "updatedAt": "2025-02-20T10:00:00.000Z",
+    "published": true
+  },
+  {
+    "id": "when-to-choose-custom-software-2",
+    "slug": "when-to-choose-custom-software",
+    "title": "When to Choose Custom Software Over Off-the-Shelf",
+    "excerpt": "Off-the-shelf tools are great until they aren’t. Here’s how to decide when it’s time to build something tailored to your business.",
+    "content": "Generic software can get you started quickly. But as your processes mature, you often hit limits: workarounds, manual steps, or features that don’t quite fit.\n\nCustom software makes sense when your workflow is unique, when you’re outgrowing spreadsheets and duct-taped tools, or when you need tight integration with the rest of your stack.\n\nWe help clients decide by looking at total cost over time, flexibility, and how critical the process is to the business. Sometimes the answer is still “stick with the product”; often, a focused custom solution pays off in efficiency and control.\n\nThis post is a short guide to when we recommend building vs buying.",
+    "author": "Buddhiworks",
+    "publishedAt": "2025-02-18T14:00:00.000Z",
+    "updatedAt": "2025-02-18T14:00:00.000Z",
+    "published": true
+  },
+  {
+    "id": "modernizing-legacy-systems-3",
+    "slug": "modernizing-legacy-systems",
+    "title": "Modernizing Legacy Systems Without a Big Bang",
+    "excerpt": "You don’t have to replace everything at once. Incremental modernization can reduce risk and keep the business running while you improve.",
+    "content": "Legacy systems often run critical parts of the business. Replacing them in one go is risky and expensive.\n\nA better approach is incremental modernization: identify bounded areas, wrap or replace them one at a time, and keep the rest running. New features go into the new stack; old code is retired only when it’s no longer needed.\n\nWe’ve helped companies move from monoliths to modular services, from old UIs to modern web apps, and from manual processes to automated workflows—all without a single “big bang” cutover.\n\nIf you’re sitting on old but important systems, we can help you plan a path that’s safe and sustainable.",
+    "author": "Buddhiworks",
+    "publishedAt": "2025-02-15T09:00:00.000Z",
+    "updatedAt": "2025-02-15T09:00:00.000Z",
+    "published": true
+  },
+  {
+    "id": "design-and-development-together-4",
+    "slug": "design-and-development-together",
+    "title": "Why Design and Development Belong Together",
+    "excerpt": "Handing off static mockups to developers leads to rework and compromise. We design and build in sync so the final product matches the vision.",
+    "content": "When design and development are separate, you get throw-over-the-wall mockups. Developers have to guess intent, and designers are surprised by what ships.\n\nWe work differently. Our designers and developers collaborate from the start: design evolves with real components and real data, and implementation stays aligned with the intended experience. That means fewer surprises, less rework, and a product that actually feels finished.\n\nIf you want a site or app that looks and works the way you imagined, we’d love to show you how we do it.",
+    "author": "Buddhiworks",
+    "publishedAt": "2025-02-12T11:00:00.000Z",
+    "updatedAt": "2025-02-12T11:00:00.000Z",
+    "published": true
+  }
+]

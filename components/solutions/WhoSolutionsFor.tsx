@@ -41,11 +41,11 @@ export function WhoSolutionsFor() {
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 1, ease: easeSmooth }}
+          viewport={{ once: true, amount: 0.12 }}
+          transition={{ duration: 0.35, ease: easeSmooth }}
           className="mb-16 text-center"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
             Solutions{" "}
             <span className="bg-gradient-to-r from-[#4F7DF3] via-[#22D3EE] to-[#4F7DF3] bg-clip-text text-transparent">
               For You
@@ -60,8 +60,8 @@ export function WhoSolutionsFor() {
               key={index}
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true, amount: 0.12 }}
+              transition={{ duration: 0.28, delay: index * 0.1 }}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
               className="group relative"
@@ -87,14 +87,14 @@ export function WhoSolutionsFor() {
 
                   {/* Content */}
                   <div className="flex-1">
-                    <h3 className={`text-xl md:text-2xl font-bold mb-2 transition-colors duration-500 ${
+                    <h3 className={`text-lg md:text-xl font-bold mb-2 transition-colors duration-500 ${
                       hoveredIndex === index 
                         ? `bg-gradient-to-r ${audience.gradient} bg-clip-text text-transparent` 
                         : "text-white"
                     }`}>
                       {audience.title}
                     </h3>
-                    <p className="text-base md:text-lg text-gray-300 leading-relaxed">
+                    <p className="text-sm md:text-base text-gray-300 leading-relaxed">
                       {audience.description}
                     </p>
                   </div>

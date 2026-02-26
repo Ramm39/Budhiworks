@@ -49,11 +49,11 @@ export function SolutionAreas() {
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 1, ease: easeSmooth }}
+          viewport={{ once: true, amount: 0.12 }}
+          transition={{ duration: 0.35, ease: easeSmooth }}
           className="mb-16 text-center"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
             What We{" "}
             <span className="bg-gradient-to-r from-[#4F7DF3] via-[#22D3EE] to-[#4F7DF3] bg-clip-text text-transparent">
               Build
@@ -70,7 +70,7 @@ export function SolutionAreas() {
                 key={index}
                 initial={{ opacity: 0, y: 50, scale: 0.9 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                viewport={{ once: true, amount: 0.2 }}
+                viewport={{ once: true, amount: 0.12 }}
                 transition={{ duration: 0.7, delay: solution.delay, ease: easeSmooth }}
                 whileHover={{ y: -12, scale: 1.02 }}
                 className={`group relative ${isLarge ? "md:col-span-2 lg:col-span-1" : ""}`}
@@ -87,12 +87,12 @@ export function SolutionAreas() {
                     </motion.div>
                     
                     {/* Brighter title */}
-                    <h3 className="text-xl md:text-2xl font-bold text-white mb-4 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:bg-clip-text group-hover:from-[#4F7DF3] group-hover:to-[#22D3EE] transition-all duration-500">
+                    <h3 className="text-lg md:text-xl font-bold text-white mb-4 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:bg-clip-text group-hover:from-[#4F7DF3] group-hover:to-[#22D3EE] transition-all duration-500">
                       {solution.title}
                     </h3>
                     
                     {/* Much brighter text */}
-                    <p className="text-base md:text-lg text-gray-100 leading-relaxed flex-1 group-hover:text-white transition-colors duration-500">
+                    <p className="text-sm md:text-base text-gray-100 leading-relaxed flex-1 group-hover:text-white transition-colors duration-500">
                       {solution.outcome}
                     </p>
 

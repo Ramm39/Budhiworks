@@ -34,23 +34,23 @@ export function Services() {
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+            viewport={{ once: true, amount: 0.12, margin: "0px 0px -40px 0px" }}
+            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
             className="mb-8 sm:mb-10 text-center"
           >
             {/* Large animated title */}
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 sm:mb-6 relative px-2">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4 sm:mb-6 relative px-2">
               <motion.span
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.35, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
                 className="relative z-10 bg-gradient-to-r from-[#4F7DF3] via-[#22D3EE] to-[#4F7DF3] bg-clip-text text-transparent block"
               >
                 WHAT WE BUILD
               </motion.span>
               {/* Animated glow */}
-              <motion.span 
+              <motion.span
                 className="absolute inset-0 bg-gradient-to-r from-[#4F7DF3]/40 via-[#22D3EE]/40 to-[#4F7DF3]/40 blur-3xl opacity-60 -z-0"
                 animate={{ opacity: [0.4, 0.6, 0.4] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
@@ -60,7 +60,7 @@ export function Services() {
               initial={{ width: 0, opacity: 0 }}
               whileInView={{ width: "100%", opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 1.2, delay: 0.4 }}
+              transition={{ duration: 0.35, delay: 0.4 }}
               className="h-px bg-gradient-to-r from-transparent via-[#22D3EE]/50 to-transparent max-w-xs mx-auto"
             />
           </motion.div>
@@ -72,9 +72,9 @@ export function Services() {
                 key={service.title}
                 initial={{ opacity: 0, x: -80 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ 
-                  duration: 0.8, 
+                viewport={{ once: true, amount: 0.12 }}
+                transition={{
+                  duration: 0.8,
                   delay: index * 0.15,
                   ease: [0.22, 1, 0.36, 1]
                 }}
@@ -89,31 +89,31 @@ export function Services() {
                     animate={{ x: ["-100%", "100%"] }}
                     transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
                   />
-                  
+
                   {/* Content */}
                   <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6 md:gap-8 relative z-10">
                     {/* Animated icon */}
-                    <motion.div 
+                    <motion.div
                       className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-lg sm:rounded-xl bg-gradient-to-br from-[#4F7DF3]/20 to-[#22D3EE]/20 flex items-center justify-center text-2xl sm:text-3xl backdrop-blur-sm border border-white/10"
                       whileHover={{ scale: 1.15, rotate: 5 }}
                       transition={{ type: "spring", stiffness: 300 }}
                     >
                       {service.icon}
                     </motion.div>
-                    
+
                     <div className="flex-1 w-full">
                       {/* Animated separator */}
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: "100%" }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.8, delay: index * 0.2 + 0.3 }}
+                        transition={{ duration: 0.3, delay: index * 0.2 + 0.3 }}
                         className="h-px bg-gradient-to-r from-[#22D3EE]/40 to-transparent mb-3 sm:mb-4"
                       />
-                      
+
                       {/* Title */}
-                      <motion.h3 
-                        className="text-xl sm:text-2xl md:text-3xl font-semibold text-white mb-2 sm:mb-3 group-hover:text-[#22D3EE] transition-colors duration-300"
+                      <motion.h3
+                        className="text-lg sm:text-xl md:text-2xl font-semibold text-white mb-2 sm:mb-3 group-hover:text-[#22D3EE] transition-colors duration-300"
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
@@ -121,10 +121,10 @@ export function Services() {
                       >
                         {service.title}
                       </motion.h3>
-                      
+
                       {/* Description */}
-                      <motion.p 
-                        className="text-base sm:text-lg md:text-xl text-gray-200 leading-relaxed"
+                      <motion.p
+                        className="text-sm sm:text-base md:text-lg text-gray-200 leading-relaxed"
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
@@ -134,7 +134,7 @@ export function Services() {
                       </motion.p>
                     </div>
                   </div>
-                  
+
                   {/* Bottom accent line */}
                   <motion.div
                     className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#4F7DF3] via-[#22D3EE] to-[#4F7DF3] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 rounded-b-2xl"

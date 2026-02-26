@@ -79,13 +79,13 @@ export function WorkCTA() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-balance relative leading-tight tracking-tight">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-balance relative leading-tight tracking-tight">
             Let&apos;s build something{" "}
             <span className="bg-gradient-to-r from-accent-blue via-accent-cyan to-accent-blue bg-clip-text text-transparent relative">
               impactful
             </span>
           </h2>
-          <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-8 max-w-2xl mx-auto text-balance leading-relaxed">
+          <p className="text-sm md:text-base text-gray-700 dark:text-gray-300 mb-8 max-w-2xl mx-auto text-balance leading-relaxed">
             Tell us about your project or challenge—we&apos;ll help you build a solution that delivers real results.
           </p>
           

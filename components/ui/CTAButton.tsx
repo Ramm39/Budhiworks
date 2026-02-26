@@ -16,7 +16,7 @@ export function CTAButton({ href = "/start-conversation", onClick, className = "
   const baseClasses = `
     relative inline-flex items-center justify-center
     px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5
-    text-sm sm:text-base md:text-lg font-semibold
+    text-xs sm:text-sm md:text-base font-semibold
     rounded-lg sm:rounded-xl
     transition-all duration-300 ease-out
     focus:outline-none focus:ring-2 focus:ring-[#22D3EE]/50 focus:ring-offset-2 focus:ring-offset-black

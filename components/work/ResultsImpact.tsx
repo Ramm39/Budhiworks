@@ -46,7 +46,7 @@ export function ResultsImpact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-2xl md:text-3xl font-bold mb-12 text-gray-900 dark:text-white text-center leading-tight"
+          className="text-xl md:text-2xl font-bold mb-12 text-gray-900 dark:text-white text-center leading-tight"
         >
           Results & Impact
         </motion.h2>
@@ -58,7 +58,7 @@ export function ResultsImpact() {
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.28, delay: index * 0.1 }}
               className="text-center"
             >
               <div className="mb-4">
@@ -71,7 +71,7 @@ export function ResultsImpact() {
                   {result.keyword}
                 </span>
               </div>
-              <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+              <p className="text-sm md:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
                 {result.statement}
               </p>
             </motion.div>

@@ -62,9 +62,9 @@ export function WorkHero() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
         >
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-balance leading-tight tracking-tight">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-balance leading-tight tracking-tight">
             Real{" "}
             <span className="bg-gradient-to-r from-accent-blue via-accent-cyan to-accent-blue bg-clip-text text-transparent">
               Projects
@@ -74,7 +74,7 @@ export function WorkHero() {
               Real Results
             </span>
           </h1>
-          <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto text-balance leading-relaxed">
+          <p className="text-sm md:text-base text-gray-700 dark:text-gray-300 max-w-3xl mx-auto text-balance leading-relaxed">
             Custom software, systems, and applications that solve problems and deliver measurable impact.
           </p>
         </motion.div>

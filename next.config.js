@@ -22,7 +22,7 @@ const nextConfig = {
     ],
   },
   experimental: {
-    optimizeCss: true,
+    // optimizeCss can cause "clientModules" undefined errors in production
     optimizePackageImports: ['framer-motion', '@react-three/fiber'],
   },
   compiler: {

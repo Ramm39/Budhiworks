@@ -34,8 +34,8 @@ export function ServiceWhyChooseUs() {
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+            viewport={{ once: true, amount: 0.12, margin: "0px 0px -40px 0px" }}
+            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
             className="mb-20 text-center"
           >
             {/* Subtle badge */}
@@ -43,29 +43,29 @@ export function ServiceWhyChooseUs() {
               initial={{ scale: 0.8, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              transition={{ duration: 0.3, delay: 0.2, ease: "easeOut" }}
               className="inline-flex items-center gap-2 px-6 py-2 bg-[#4F7DF3]/10 border border-[#4F7DF3]/20 rounded-full mb-8 backdrop-blur-md"
             >
-              <motion.div 
+              <motion.div
                 className="w-2 h-2 rounded-full bg-[#4F7DF3]"
                 animate={{ scale: [1, 1.2, 1], opacity: [0.5, 1, 0.5] }}
                 transition={{ duration: 2, repeat: Infinity }}
               />
               <span className="text-[#4F7DF3] text-xs tracking-widest font-medium">WHY CHOOSE US</span>
-              <motion.div 
+              <motion.div
                 className="w-2 h-2 rounded-full bg-[#4F7DF3]"
                 animate={{ scale: [1, 1.2, 1], opacity: [0.5, 1, 0.5] }}
                 transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
               />
             </motion.div>
-            
+
             {/* Large animated title */}
             <h2 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-6 relative">
               <motion.span
                 initial={{ opacity: 0, x: -100 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.35, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
                 className="relative z-10 inline-block"
               >
                 WHY
@@ -74,25 +74,25 @@ export function ServiceWhyChooseUs() {
                 initial={{ opacity: 0, x: 100 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.35, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
                 className="relative z-10 inline-block ml-4 md:ml-6 bg-gradient-to-r from-[#4F7DF3] via-[#22D3EE] to-[#4F7DF3] bg-clip-text text-transparent"
               >
                 CHOOSE US
               </motion.span>
               {/* Animated glow behind title */}
-              <motion.span 
+              <motion.span
                 className="absolute inset-0 bg-gradient-to-r from-[#4F7DF3]/40 via-[#22D3EE]/40 to-[#4F7DF3]/40 blur-3xl opacity-60 -z-0"
                 animate={{ opacity: [0.4, 0.6, 0.4] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               />
             </h2>
-            
+
             {/* Animated separator */}
             <motion.div
               initial={{ width: 0, opacity: 0 }}
               whileInView={{ width: "100%", opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 1.2, delay: 0.6, ease: "easeOut" }}
+              transition={{ duration: 0.35, delay: 0.6, ease: "easeOut" }}
               className="h-px bg-gradient-to-r from-transparent via-[#22D3EE]/50 to-transparent max-w-md mx-auto"
             />
           </motion.div>
@@ -104,9 +104,9 @@ export function ServiceWhyChooseUs() {
                 key={feature.title}
                 initial={{ opacity: 0, y: 60, scale: 0.9 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ 
-                  duration: 0.8, 
+                viewport={{ once: true, amount: 0.12, margin: "0px 0px -40px 0px" }}
+                transition={{
+                  duration: 0.8,
                   delay: index * 0.15,
                   ease: [0.22, 1, 0.36, 1]
                 }}
@@ -116,23 +116,22 @@ export function ServiceWhyChooseUs() {
                 {/* Floating glass card */}
                 <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 md:p-10 hover:border-[#22D3EE]/40 hover:bg-white/8 transition-all duration-500 overflow-hidden">
                   {/* Animated background glow */}
-                  <motion.div 
-                    className={`absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${
-                      feature.color === "accent-blue" 
+                  <motion.div
+                    className={`absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${feature.color === "accent-blue"
                         ? "bg-gradient-to-br from-[#4F7DF3]/20 via-transparent to-transparent"
                         : "bg-gradient-to-br from-[#22D3EE]/20 via-transparent to-transparent"
-                    }`}
-                    animate={{ 
+                      }`}
+                    animate={{
                       backgroundPosition: ["0% 0%", "100% 100%"],
                     }}
                     transition={{ duration: 3, repeat: Infinity, repeatType: "reverse" }}
                   />
-                  
+
                   {/* Content */}
                   <div className="relative z-10">
                     {/* Title with animated underline */}
                     <div className="mb-6">
-                      <motion.h3 
+                      <motion.h3
                         className="text-2xl md:text-3xl font-semibold text-white mb-4 group-hover:text-[#22D3EE] transition-colors duration-300"
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
@@ -146,17 +145,16 @@ export function ServiceWhyChooseUs() {
                         initial={{ width: 0 }}
                         whileInView={{ width: "100%" }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.8, delay: index * 0.2 + 0.5 }}
-                        className={`h-0.5 bg-gradient-to-r ${
-                          feature.color === "accent-blue" 
-                            ? "from-[#4F7DF3]/80 via-[#4F7DF3]/40 to-transparent" 
+                        transition={{ duration: 0.3, delay: index * 0.2 + 0.5 }}
+                        className={`h-0.5 bg-gradient-to-r ${feature.color === "accent-blue"
+                            ? "from-[#4F7DF3]/80 via-[#4F7DF3]/40 to-transparent"
                             : "from-[#22D3EE]/80 via-[#22D3EE]/40 to-transparent"
-                        } rounded-full`}
+                          } rounded-full`}
                       />
                     </div>
-                    
+
                     {/* Description */}
-                    <motion.p 
+                    <motion.p
                       className="text-lg md:text-xl text-gray-200 leading-relaxed"
                       initial={{ opacity: 0 }}
                       whileInView={{ opacity: 1 }}
@@ -166,12 +164,11 @@ export function ServiceWhyChooseUs() {
                       {feature.description}
                     </motion.p>
                   </div>
-                  
+
                   {/* Side accent bar */}
-                  <motion.div 
-                    className={`absolute left-0 top-0 bottom-0 w-1 rounded-l-2xl ${
-                      feature.color === "accent-blue" ? "bg-[#4F7DF3]" : "bg-[#22D3EE]"
-                    } opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
+                  <motion.div
+                    className={`absolute left-0 top-0 bottom-0 w-1 rounded-l-2xl ${feature.color === "accent-blue" ? "bg-[#4F7DF3]" : "bg-[#22D3EE]"
+                      } opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
                     initial={{ scaleY: 0 }}
                     whileHover={{ scaleY: 1 }}
                     transition={{ duration: 0.3 }}
