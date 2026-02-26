@@ -30,7 +30,7 @@ export function StartConversationForm() {
     setIsSubmitting(true);
     setSubmitStatus("idle");
     try {
-      const res = await fetch("https://formsubmit.co/ajax/buddhiworks@gmail.com", {
+      const res = await fetch("https://formsubmit.co/ajax/3d921f85921eb3a2c345462717613e82", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
@@ -44,8 +44,12 @@ export function StartConversationForm() {
           _subject: `Start conversation: ${formData.name}`,
         }),
       });
-      const data = await res.json();
-      if (data.success === "true") {
+      const contentType = res.headers.get("content-type");
+      const isJson = contentType && contentType.includes("application/json");
+      const data = isJson ? await res.json() : {};
+      const explicitFail = data.success === "false" || data.success === false;
+      const success = res.ok && !explicitFail;
+      if (success) {
         setSubmitStatus("success");
         setFormData({ name: "", email: "", company: "", project: "", projectDetails: "", budget: "", timeline: "" });
       } else {
@@ -239,11 +243,11 @@ export function StartConversationForm() {
                   }}
                 >
                   <option value="" className="bg-black text-white" style={{ maxWidth: '100%' }}>Select budget</option>
-                  <option value="under-25k" className="bg-black text-white" style={{ maxWidth: '100%' }}>Under $25,000</option>
-                  <option value="25k-50k" className="bg-black text-white" style={{ maxWidth: '100%' }}>$25,000 - $50,000</option>
-                  <option value="50k-100k" className="bg-black text-white" style={{ maxWidth: '100%' }}>$50,000 - $100,000</option>
-                  <option value="100k-250k" className="bg-black text-white" style={{ maxWidth: '100%' }}>$100,000 - $250,000</option>
-                  <option value="over-250k" className="bg-black text-white" style={{ maxWidth: '100%' }}>Over $250,000</option>
+                  <option value="50k-1l-inr" className="bg-black text-white" style={{ maxWidth: '100%' }}>₹50,000 - ₹1,00,000</option>
+                  <option value="1l-5l-inr" className="bg-black text-white" style={{ maxWidth: '100%' }}>₹1,00,000 - ₹5,00,000</option>
+                  <option value="5l-10l-inr" className="bg-black text-white" style={{ maxWidth: '100%' }}>₹5,00,000 - ₹10,00,000</option>
+                  <option value="10l-25l-inr" className="bg-black text-white" style={{ maxWidth: '100%' }}>₹10,00,000 - ₹25,00,000</option>
+                  <option value="over-25l-inr" className="bg-black text-white" style={{ maxWidth: '100%' }}>Over ₹25,00,000</option>
                 </motion.select>
               </div>
 

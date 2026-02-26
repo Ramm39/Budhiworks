@@ -49,7 +49,7 @@ nav button {
   overflow-x: hidden;
 }
 
-/* Nav CTA "Start a Conversation" – no outline/box on focus or hover */
+/* Nav CTA "Start a Conversation" – no outline/box/line on focus or hover */
 nav a.nav-cta-link,
 nav a.nav-cta-link:hover,
 nav a.nav-cta-link:focus,
@@ -59,6 +59,11 @@ nav a.nav-cta-link:active {
   outline-offset: 0 !important;
   border: none !important;
   box-shadow: none !important;
+  text-decoration: none !important;
+}
+nav a.nav-cta-link::before,
+nav a.nav-cta-link::after {
+  display: none !important;
 }
 
 body {

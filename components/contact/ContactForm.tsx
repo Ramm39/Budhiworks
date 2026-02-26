@@ -28,7 +28,7 @@ export function ContactForm() {
     setIsSubmitting(true);
     setSubmitStatus("idle");
     try {
-      const res = await fetch("https://formsubmit.co/ajax/buddhiworks@gmail.com", {
+      const res = await fetch("https://formsubmit.co/ajax/3d921f85921eb3a2c345462717613e82", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
@@ -40,8 +40,12 @@ export function ContactForm() {
           _subject: `Contact form: ${formData.name}`,
         }),
       });
-      const data = await res.json();
-      if (data.success === "true") {
+      const contentType = res.headers.get("content-type");
+      const isJson = contentType && contentType.includes("application/json");
+      const data = isJson ? await res.json() : {};
+      const explicitFail = data.success === "false" || data.success === false;
+      const success = res.ok && !explicitFail;
+      if (success) {
         setSubmitStatus("success");
         setFormData({ name: "", email: "", company: "", need: "", message: "" });
       } else {

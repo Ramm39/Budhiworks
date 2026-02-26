@@ -292,29 +292,25 @@ function NavbarComponent() {
                   }}
                   className="hidden md:block"
                 >
-                  <motion.div
-                    className="relative overflow-hidden rounded-full outline-none focus-within:outline-none"
+                  <div
+                    className="group relative overflow-hidden rounded-full outline-none focus-within:outline-none ring-0 border-0 transition-shadow duration-300 hover:shadow-[0_0_24px_rgba(79,125,243,0.35),0_0_48px_rgba(34,211,238,0.2)]"
                     style={{
                       background: theme === "dark"
                         ? "linear-gradient(135deg, rgba(79, 125, 243, 0.28) 0%, rgba(34, 211, 238, 0.22) 100%)"
                         : "linear-gradient(135deg, rgba(79, 125, 243, 0.22) 0%, rgba(34, 211, 238, 0.18) 100%)",
                       backdropFilter: "blur(10px)",
                       WebkitBackdropFilter: "blur(10px)",
-                      border: `1px solid ${theme === "dark" ? "rgba(79, 125, 243, 0.45)" : "rgba(79, 125, 243, 0.35)"}`,
-                      boxShadow: "none",
+                      boxShadow: `inset 0 0 0 1px ${theme === "dark" ? "rgba(79, 125, 243, 0.45)" : "rgba(79, 125, 243, 0.35)"}`,
                     }}
-                    transition={{ duration: 0.3, ease: "easeOut" }}
-                    whileHover={{ scale: 1.03 }}
-                    whileTap={{ scale: 0.98 }}
                   >
                     <Link
                       href="/start-conversation"
-                      className="relative block px-3 md:px-4 lg:px-6 py-1.5 md:py-2 lg:py-2.5 text-sm md:text-base font-medium tracking-wide text-gray-900 dark:text-white transition-all duration-300 whitespace-nowrap rounded-full hover:text-gray-950 dark:hover:text-white hover:scale-[1.02] [outline:none] [&:focus]:outline-none [&:focus]:ring-0"
-                      style={{ outline: "none" }}
+                      className="nav-cta-link relative block px-3 md:px-4 lg:px-6 py-1.5 md:py-2 lg:py-2.5 text-sm md:text-base font-medium tracking-wide text-gray-900 dark:text-white whitespace-nowrap rounded-full no-underline border-0 ring-0 focus:ring-0 focus:border-0 pointer-events-auto transition-transform duration-300 group-hover:scale-105"
+                      style={{ outline: "none", boxShadow: "none" }}
                     >
                       Start a Conversation
                     </Link>
-                  </motion.div>
+                  </div>
                 </motion.div>
               )}
 
@@ -390,33 +386,33 @@ function NavbarComponent() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 }}
                 >
-                  <motion.div
-                    className="relative overflow-hidden rounded-full w-full max-w-full"
+                  <div
+                    className="group relative overflow-hidden rounded-full w-full max-w-full ring-0 border-0 transition-shadow duration-300 hover:shadow-[0_0_24px_rgba(79,125,243,0.35),0_0_48px_rgba(34,211,238,0.2)] active:shadow-[0_0_24px_rgba(79,125,243,0.35),0_0_48px_rgba(34,211,238,0.2)]"
                     style={{
                       background: theme === "dark"
                         ? "linear-gradient(135deg, rgba(79, 125, 243, 0.2) 0%, rgba(34, 211, 238, 0.15) 100%)"
                         : "linear-gradient(135deg, rgba(79, 125, 243, 0.15) 0%, rgba(34, 211, 238, 0.1) 100%)",
                       backdropFilter: "blur(10px)",
                       WebkitBackdropFilter: "blur(10px)",
-                      border: `1px solid ${theme === "dark" ? "rgba(79, 125, 243, 0.3)" : "rgba(79, 125, 243, 0.2)"}`,
+                      boxShadow: `inset 0 0 0 1px ${theme === "dark" ? "rgba(79, 125, 243, 0.3)" : "rgba(79, 125, 243, 0.2)"}`,
                       maxWidth: '100%',
                     }}
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
                   >
                     <Link
                       href="/start-conversation"
                       onClick={() => setMobileMenuOpen(false)}
-                      className="block px-4 sm:px-6 py-3 text-sm font-light tracking-wide text-gray-900 dark:text-white text-center transition-all duration-300 touch-manipulation w-full overflow-x-hidden whitespace-nowrap"
+                      className="nav-cta-link block px-4 sm:px-6 py-3 text-sm font-light tracking-wide text-gray-900 dark:text-white text-center touch-manipulation w-full overflow-x-hidden whitespace-nowrap no-underline border-0 ring-0 transition-transform duration-300 group-hover:scale-105 group-active:scale-105"
                       style={{
                         maxWidth: '100%',
                         overflow: 'hidden',
                         textOverflow: 'ellipsis',
+                        outline: 'none',
+                        boxShadow: 'none',
                       }}
                     >
                       Start a Conversation
                     </Link>
-                  </motion.div>
+                  </div>
                 </motion.div>
               )}
             </div>
