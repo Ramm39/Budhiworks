@@ -13,8 +13,8 @@ const solutions = [
     delay: 0,
   },
   {
-    title: "Web & App Development",
-    outcome: "Scalable web and mobile applications that perform reliably under load.",
+    title: "Application Development",
+    outcome: "Scalable applications that perform reliably under load.",
     icon: "🌐",
     gradient: "from-[#22D3EE] to-[#4F7DF3]",
     delay: 0.1,
@@ -59,6 +59,9 @@ export function SolutionAreas() {
               Build
             </span>
           </h2>
+          <p className="text-sm md:text-base text-gray-300 max-w-2xl mx-auto leading-relaxed">
+            We deliver software development solutions across the following areas—whether you need custom products, internal tools, or system modernization. Partner with product development outsourcing companies that invest in your success.
+          </p>
         </motion.div>
 
         {/* Staggered Masonry Layout */}

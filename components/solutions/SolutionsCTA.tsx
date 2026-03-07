@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { CTAButton } from "@/components/ui/CTAButton";
 
 export function SolutionsCTA() {
@@ -99,8 +100,12 @@ export function SolutionsCTA() {
               for your business
             </h2>
 
-            <p className="text-sm md:text-base text-gray-300 mb-10 max-w-2xl mx-auto text-balance leading-relaxed">
+            <p className="text-sm md:text-base text-gray-300 mb-4 max-w-2xl mx-auto text-balance leading-relaxed">
               Tell us about your challenge or opportunity—we&apos;ll help you figure out the best approach.
+            </p>
+            <p className="text-xs sm:text-sm text-gray-400 mb-10">
+              Explore our{" "}
+              <Link href="/services" className="text-accent-blue dark:text-accent-cyan hover:underline underline-offset-2">offshore software development services</Link>.
             </p>
 
             {/* CTA Button */}

@@ -4,18 +4,11 @@ import { memo, useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-const services = [
-  "Custom Software",
-  "Website Development",
-  "Web Applications",
-  "UI/UX Design",
-];
-
-const solutions = [
-  "For Growing Businesses",
-  "For Startups",
-  "Internal Tools",
-  "Modernization",
+const mainLinks = [
+  { label: "Services", href: "/services" },
+  { label: "Solutions", href: "/solutions" },
+  { label: "Work", href: "/work" },
+  { label: "Company", href: "/company" },
 ];
 
 function FooterComponent({ transparent }: { transparent?: boolean }) {
@@ -28,7 +21,7 @@ function FooterComponent({ transparent }: { transparent?: boolean }) {
       }
     >
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-10 lg:gap-12 mb-6 sm:mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10 lg:gap-12 mb-6 sm:mb-8">
           {/* About */}
           <div>
             <Link href="/" className="inline-block mb-4">
@@ -50,39 +43,20 @@ function FooterComponent({ transparent }: { transparent?: boolean }) {
             </p>
           </div>
 
-          {/* Services */}
+          {/* Explore */}
           <div>
             <h4 className={`text-xs font-semibold mb-4 uppercase tracking-wider ${transparent ? "text-white" : "text-gray-900 dark:text-white"}`}>
-              Services
+              Explore
             </h4>
             <ul className="space-y-2">
-              {services.map((service) => (
-                <li key={service}>
-                  <a
-                    href="#services"
+              {mainLinks.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
                     className={`text-xs transition-colors hover:text-accent-blue dark:hover:text-accent-cyan ${transparent ? "text-gray-300 hover:text-accent-cyan" : "text-gray-600 dark:text-gray-400"}`}
                   >
-                    {service}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Solutions */}
-          <div>
-            <h4 className={`text-xs font-semibold mb-4 uppercase tracking-wider ${transparent ? "text-white" : "text-gray-900 dark:text-white"}`}>
-              Solutions
-            </h4>
-            <ul className="space-y-2">
-              {solutions.map((solution) => (
-                <li key={solution}>
-                  <a
-                    href="#solutions"
-                    className={`text-xs transition-colors hover:text-accent-blue dark:hover:text-accent-cyan ${transparent ? "text-gray-300 hover:text-accent-cyan" : "text-gray-600 dark:text-gray-400"}`}
-                  >
-                    {solution}
-                  </a>
+                    {item.label}
+                  </Link>
                 </li>
               ))}
             </ul>

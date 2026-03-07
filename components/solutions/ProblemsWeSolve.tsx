@@ -54,6 +54,9 @@ export function ProblemsWeSolve() {
               Tackle
             </span>
           </h2>
+          <p className="text-sm md:text-base text-gray-300 max-w-2xl mx-auto leading-relaxed">
+            Our software development solutions address these pain points so your team can focus on growth. As one of the product development outsourcing companies that prioritizes outcomes, we align our work with your goals.
+          </p>
         </motion.div>
 
         {/* Vertical Timeline Style */}

@@ -70,9 +70,9 @@ export function SolutionsHero() {
             className="space-y-4 md:space-y-6"
           >
             <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-balance leading-tight text-white drop-shadow-2xl">
-              Solutions That{" "}
+              Scalable Software Development Solutions for{" "}
               <span className="bg-gradient-to-r from-accent-blue to-accent-cyan bg-clip-text text-transparent relative inline-block">
-                Work
+                Modern Businesses
                 <span className="absolute inset-0 bg-gradient-to-r from-accent-blue/40 to-accent-cyan/40 blur-3xl -z-10" />
               </span>
             </h1>
@@ -84,7 +84,7 @@ export function SolutionsHero() {
             className="max-w-3xl"
           >
             <p className="text-sm md:text-base lg:text-lg text-gray-200 dark:text-gray-100 text-balance leading-relaxed font-light drop-shadow-lg">
-              We build custom software, systems, and tools that solve real business problems—engineered for reliability, designed for scale.
+              Strategic software development solutions from one of the reliable product development outsourcing companies delivering measurable business outcomes.
             </p>
           </motion.div>
         </div>

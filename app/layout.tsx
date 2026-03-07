@@ -20,12 +20,19 @@ const inter = Inter({
   fallback: ["system-ui", "arial"],
 });
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.buddhiworks.com";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "Buddhiworks - Custom Software & Digital Solutions",
   description: "We design and build custom software, websites, and applications that help businesses operate better, scale confidently, and stay future-ready.",
   icons: {
     icon: "/images/logo.png?v=2",
     apple: "/images/logo.png?v=2",
+  },
+  openGraph: {
+    url: SITE_URL,
+    siteName: "Buddhiworks",
   },
 };
 

@@ -3,6 +3,13 @@ import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/sections/Hero";
 import { BlurredSections } from "@/components/ui/BlurredSections";
 
+export const metadata = {
+  title: "Offshore Software Development Services | AI Dev Company USA",
+  description:
+    "Offshore software development services and software development solutions. Trusted AI development company USA for scalable, secure products and growth.",
+  alternates: { canonical: "/" },
+};
+
 // Dynamic imports for heavy components - load below the fold components lazily
 const PageBackground = dynamic(() => import("@/components/ui/PageBackground").then(mod => ({ default: mod.PageBackground })), {
   ssr: false, // Three.js doesn't work with SSR

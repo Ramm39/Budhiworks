@@ -14,7 +14,7 @@ const services = [
     icon: "🌐",
   },
   {
-    title: "Web & Application Development",
+    title: "Application Development",
     description: "Scalable applications that help teams manage operations and data.",
     icon: "📱",
   },

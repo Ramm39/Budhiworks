@@ -74,6 +74,9 @@ export function HowWeDeliver() {
                 DELIVER
               </motion.span>
             </h2>
+            <p className="text-sm md:text-base text-gray-300 max-w-2xl mx-auto leading-relaxed">
+              Unlike traditional product development outsourcing companies, we combine strategy, engineering, and delivery excellence.
+            </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">

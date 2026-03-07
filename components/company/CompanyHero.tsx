@@ -69,10 +69,10 @@ export function CompanyHero() {
             transition={{ duration: 0.35, ease: easeSmooth }}
             className="space-y-3 sm:space-y-4 md:space-y-6"
           >
-            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-6xl font-bold text-balance leading-tight text-white drop-shadow-2xl px-2">
-              Building Software{" "}
+            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-balance leading-tight text-white drop-shadow-2xl px-2">
+              About Our Software Development &{" "}
               <span className="bg-gradient-to-r from-accent-blue to-accent-cyan bg-clip-text text-transparent relative inline-block">
-                the Right Way
+                AI Engineering Company
                 <span className="absolute inset-0 bg-gradient-to-r from-accent-blue/40 to-accent-cyan/40 blur-3xl -z-10" />
               </span>
             </h1>
@@ -84,7 +84,7 @@ export function CompanyHero() {
             className="max-w-3xl px-4"
           >
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 dark:text-gray-100 text-balance leading-relaxed font-light drop-shadow-lg">
-              We&apos;re a team of engineers and designers who believe in building software that solves real problems, lasts long, and grows with your business.
+              A trusted AI development company USA delivering advanced software development solutions as a global web development company.
             </p>
           </motion.div>
         </div>

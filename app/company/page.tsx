@@ -3,6 +3,13 @@ import { Navbar } from "@/components/Navbar";
 import { BlurredSections } from "@/components/ui/BlurredSections";
 import { CompanyHero } from "@/components/company/CompanyHero";
 
+export const metadata = {
+  title: "AI Development Company USA | Web Development Company",
+  description:
+    "A trusted AI development company USA and web development company delivering advanced software development solutions for global businesses. Learn more about us.",
+  alternates: { canonical: "/company" },
+};
+
 const PageBackground = dynamic(
   () => import("@/components/ui/PageBackground").then((m) => ({ default: m.PageBackground })),
   { ssr: false }

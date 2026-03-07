@@ -64,18 +64,14 @@ export function WorkHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, ease: "easeOut" }}
         >
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-balance leading-tight tracking-tight">
-            Real{" "}
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-balance leading-tight tracking-tight text-white">
+            Our Offshore Software Development Services{" "}
             <span className="bg-gradient-to-r from-accent-blue via-accent-cyan to-accent-blue bg-clip-text text-transparent">
-              Projects
-            </span>
-            ,{" "}
-            <span className="bg-gradient-to-r from-accent-cyan via-accent-blue to-accent-cyan bg-clip-text text-transparent">
-              Real Results
+              Portfolio
             </span>
           </h1>
-          <p className="text-sm md:text-base text-gray-700 dark:text-gray-300 max-w-3xl mx-auto text-balance leading-relaxed">
-            Custom software, systems, and applications that solve problems and deliver measurable impact.
+          <p className="text-sm md:text-base text-gray-200 dark:text-gray-300 max-w-3xl mx-auto text-balance leading-relaxed">
+            Explore our offshore software development services portfolio featuring custom software engineering projects and real business results.
           </p>
         </motion.div>
       </div>

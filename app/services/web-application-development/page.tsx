@@ -21,8 +21,8 @@ export default function WebApplicationDevelopmentPage() {
       <PageBackground variant="alt" />
       <Navbar />
       <ServiceDetailHero
-        title="Web & Application Development"
-        subtitle="Scalable web applications that help teams manage operations, data, and workflows efficiently and effectively."
+        title="Application Development"
+        subtitle="Scalable applications that help teams manage operations, data, and workflows efficiently and effectively."
         backgroundImage="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=1200&q=60"
       />
       <BlurredSections>

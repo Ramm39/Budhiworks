@@ -3,6 +3,13 @@ import { Navbar } from "@/components/Navbar";
 import { BlurredSections } from "@/components/ui/BlurredSections";
 import { SolutionsHero } from "@/components/solutions/SolutionsHero";
 
+export const metadata = {
+  title: "Software Development Solutions | Product Development Outsourcing",
+  description:
+    "Strategic software development solutions from reliable product development outsourcing companies. Delivering measurable business outcomes and scale. Get started.",
+  alternates: { canonical: "/solutions" },
+};
+
 const PageBackground = dynamic(
   () => import("@/components/ui/PageBackground").then((m) => ({ default: m.PageBackground })),
   { ssr: false }

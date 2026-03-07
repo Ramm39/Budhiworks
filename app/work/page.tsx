@@ -3,6 +3,13 @@ import { Navbar } from "@/components/Navbar";
 import { BlurredSections } from "@/components/ui/BlurredSections";
 import { WorkHero } from "@/components/work/WorkHero";
 
+export const metadata = {
+  title: "Offshore Software Development & Custom Engineering Portfolio",
+  description:
+    "Explore our offshore software development services portfolio and custom software engineering case studies with real business results and impact. View our work.",
+  alternates: { canonical: "/work" },
+};
+
 const PageBackground = dynamic(
   () => import("@/components/ui/PageBackground").then((m) => ({ default: m.PageBackground })),
   { ssr: false }

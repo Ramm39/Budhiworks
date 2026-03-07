@@ -10,7 +10,6 @@ export function StartConversationForm() {
     company: "",
     project: "",
     projectDetails: "",
-    budget: "",
     timeline: "",
   });
 
@@ -39,7 +38,6 @@ export function StartConversationForm() {
           company: formData.company || "(not provided)",
           project: formData.project || "(not provided)",
           projectDetails: formData.projectDetails,
-          budget: formData.budget || "(not provided)",
           timeline: formData.timeline || "(not provided)",
           _subject: `Start conversation: ${formData.name}`,
         }),
@@ -51,7 +49,7 @@ export function StartConversationForm() {
       const success = res.ok && !explicitFail;
       if (success) {
         setSubmitStatus("success");
-        setFormData({ name: "", email: "", company: "", project: "", projectDetails: "", budget: "", timeline: "" });
+        setFormData({ name: "", email: "", company: "", project: "", projectDetails: "", timeline: "" });
       } else {
         setSubmitStatus("error");
       }
@@ -178,8 +176,8 @@ export function StartConversationForm() {
               </div>
             </div>
 
-            {/* Row 2: Project, Budget, Timeline - 3 columns */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full overflow-x-hidden">
+            {/* Row 2: Project Type, Timeline - 2 columns */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full overflow-x-hidden">
               {/* Project */}
               <div className="w-full min-w-0 overflow-x-hidden">
                 <label htmlFor="project" className="block text-sm font-medium text-gray-300 mb-2">
@@ -213,41 +211,6 @@ export function StartConversationForm() {
                   <option value="custom-software" className="bg-black text-white" style={{ maxWidth: '100%' }}>Custom Software</option>
                   <option value="ui-ux" className="bg-black text-white" style={{ maxWidth: '100%' }}>UI/UX Design</option>
                   <option value="other" className="bg-black text-white" style={{ maxWidth: '100%' }}>Other</option>
-                </motion.select>
-              </div>
-
-              {/* Budget */}
-              <div className="w-full min-w-0 overflow-x-hidden">
-                <label htmlFor="budget" className="block text-sm font-medium text-gray-300 mb-2">
-                  Budget <span className="text-gray-500 font-normal text-xs">(optional)</span>
-                </label>
-                <motion.select
-                  id="budget"
-                  name="budget"
-                  value={formData.budget}
-                  onChange={handleChange}
-                  onFocus={() => setFocusedField("budget")}
-                  onBlur={() => setFocusedField(null)}
-                  className="w-full max-w-full px-4 py-3 bg-black/30 border border-white/10 rounded-xl text-white focus:outline-none transition-all duration-300 backdrop-blur-sm appearance-none cursor-pointer text-sm overflow-hidden"
-                  whileFocus={{
-                    scale: 1.01,
-                  }}
-                  style={{
-                    boxShadow: focusedField === "budget" 
-                      ? "0 0 20px rgba(79, 125, 243, 0.3), inset 0 0 20px rgba(79, 125, 243, 0.1)"
-                      : "none",
-                    borderColor: focusedField === "budget" ? "rgba(79, 125, 243, 0.5)" : "rgba(255, 255, 255, 0.1)",
-                    maxWidth: '100%',
-                    wordWrap: 'break-word',
-                    overflowWrap: 'break-word',
-                  }}
-                >
-                  <option value="" className="bg-black text-white" style={{ maxWidth: '100%' }}>Select budget</option>
-                  <option value="50k-1l-inr" className="bg-black text-white" style={{ maxWidth: '100%' }}>₹50,000 - ₹1,00,000</option>
-                  <option value="1l-5l-inr" className="bg-black text-white" style={{ maxWidth: '100%' }}>₹1,00,000 - ₹5,00,000</option>
-                  <option value="5l-10l-inr" className="bg-black text-white" style={{ maxWidth: '100%' }}>₹5,00,000 - ₹10,00,000</option>
-                  <option value="10l-25l-inr" className="bg-black text-white" style={{ maxWidth: '100%' }}>₹10,00,000 - ₹25,00,000</option>
-                  <option value="over-25l-inr" className="bg-black text-white" style={{ maxWidth: '100%' }}>Over ₹25,00,000</option>
                 </motion.select>
               </div>
 

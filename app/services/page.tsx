@@ -3,6 +3,13 @@ import { Navbar } from "@/components/Navbar";
 import { BlurredSections } from "@/components/ui/BlurredSections";
 import { ServicesPageHero } from "@/components/services/ServicesPageHero";
 
+export const metadata = {
+  title: "Custom Software Engineering | Web Development Company",
+  description:
+    "Custom software engineering and bespoke software development service from a trusted web development company building modern digital platforms. Start your project.",
+  alternates: { canonical: "/services" },
+};
+
 const PageBackground = dynamic(
   () => import("@/components/ui/PageBackground").then((m) => ({ default: m.PageBackground })),
   { ssr: false }
@@ -21,7 +28,7 @@ export default function ServicesPage() {
       <BlurredSections>
         <DetailedServiceSection
         title="Custom Software Development"
-        description="Tailored software designed around your business workflows."
+        description="Our custom software engineering and bespoke software development service delivers tailored solutions designed around your business workflows."
         features={[
           "Business process automation",
           "Custom integrations with existing systems",
@@ -33,7 +40,7 @@ export default function ServicesPage() {
         />
         <DetailedServiceSection
         title="Website Development"
-        description="Fast, responsive, and reliable websites built for clarity and performance."
+        description="As a full-service web development company, we deliver high-performance websites. Fast, responsive, and reliable sites built for clarity and performance."
         features={[
           "Modern, responsive design",
           "Fast loading times",
@@ -44,7 +51,7 @@ export default function ServicesPage() {
         image="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=1920&q=80"
         />
         <DetailedServiceSection
-        title="Web & Application Development"
+        title="Application Development"
         description="Scalable applications that help teams manage operations and data."
         features={[
           "Full-stack development",

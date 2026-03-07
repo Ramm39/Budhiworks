@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { CTAButton } from "@/components/ui/CTAButton";
 
 const easeSmooth = [0.25, 0.1, 0.25, 1];
@@ -22,8 +23,15 @@ export function ServicesFinalCTA() {
               <span className="absolute inset-0 bg-gradient-to-r from-accent-blue/40 to-accent-cyan/40 blur-3xl -z-10 opacity-60" />
             </span>
           </h2>
-          <p className="text-sm md:text-base text-gray-200 dark:text-gray-300 mb-8 max-w-2xl mx-auto text-balance leading-relaxed">
+          <p className="text-sm md:text-base text-gray-200 dark:text-gray-300 mb-4 max-w-2xl mx-auto text-balance leading-relaxed">
             Tell us about your idea, challenge, or system — we&apos;ll help you figure out the next step.
+          </p>
+          <p className="text-xs sm:text-sm text-gray-400 dark:text-gray-500 mb-8">
+            Explore our{" "}
+            <Link href="/solutions" className="text-accent-blue dark:text-accent-cyan hover:underline underline-offset-2">software development solutions</Link>
+            {" "}and{" "}
+            <Link href="/work" className="text-accent-blue dark:text-accent-cyan hover:underline underline-offset-2">custom software engineering</Link>
+            {" "}portfolio.
           </p>
           <CTAButton href="/start-conversation" />
         </motion.div>

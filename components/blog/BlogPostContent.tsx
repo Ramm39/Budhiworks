@@ -54,7 +54,7 @@ export function BlogPostContent({ post }: { post: BlogPost }) {
           >
             <Image
               src={post.coverImage}
-              alt=""
+              alt={post.title ? `Blog: ${post.title}` : "Blog post cover"}
               fill
               className="object-cover"
               priority
